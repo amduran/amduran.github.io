@@ -41,23 +41,6 @@
     }
   }
 
-  function initMap() {
-    try {
-      const mapNode = document.getElementById('map');
-      if (mapNode) {
-        const map = L.map('map').setView([37.867727, -4.790526], 15);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        L.marker([37.867727, -4.790526]).addTo(map)
-          .bindPopup('Universidad Loyola Andalucía')
-          .openPopup();
-      }
-    } catch (e) {
-      console.warn('map not loaded');
-    }
-  }
-
   function quartileScore(value) {
     const scores = { 'Q1D1': 5, 'Q1': 4, 'Q2': 3, 'Q3': 2, 'Q4': 1, 'NONE': 0 };
     return scores[String(value || 'NONE').toUpperCase()] || 0;
@@ -150,7 +133,6 @@
   document.addEventListener('DOMContentLoaded', function(){
     initTheme();
     initMenu();
-    initMap();
     initPublicationFilters();
   });
 })();
