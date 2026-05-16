@@ -39,7 +39,6 @@ const alternateHref = route(alternateLang, routeKey, routeId);
     <script is:inline>(function(){try{var savedTheme=localStorage.getItem('site-theme');if(savedTheme==='dark'||savedTheme==='light'){document.documentElement.setAttribute('data-theme',savedTheme);}}catch(e){}})();</script>
   </head>
   <body class={pageClass} data-page={routeKey} data-lang={lang}>
-    <a class="skip-link" href="#main-content">{lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}</a>
     <Header site={site} ui={ui} lang={lang} routeKey={routeKey} routeId={routeId} alternateHref={alternateHref} />
     <main id="main-content" class="section-space">
       <slot />
