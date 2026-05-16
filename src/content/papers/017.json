@@ -1,0 +1,13 @@
+{
+  "idx": 17,
+  "authors": "D. Guijo-Rubio, V.M. Vargas-Yun, <span class=\"bold\">A.M. Durán-Rosal</span>, A.M. Gómez-Orellana, J. Barbero-Gómez, J.C. Fernández and P.A. Gutiérrez",
+  "title": "Potenciando el perfil profesional Científico de Datos mediante dinámicas de competición",
+  "journal": "Revista de Innovación y Buenas Prácticas Docentes",
+  "volume": 10,
+  "year": 2021,
+  "pages": "101-106",
+  "impact": "",
+  "url": "https://www.uco.es/ucopress/ojs/index.php/ripadoc/article/view/13256",
+  "abstract": "Data Science is the area that comprises the development of scientific methods, processes, and systems for extracting knowledge from previously collected data, aiming to analyse the procedures being carried out currently. The professional profile associated with this field is the Data Scientist, generally carried out by Computer Engineers as the skills and competencies acquired during their training are perfectly suited to what this job requires. Due to the need for training new Data Scientists, among other goals, there are different emerging platforms where they can acquire extensive experience, such as Kaggle. The main objective of this teaching experience is to provide students with practical experience on a real problem, as well as the possibility of cooperating and competing at the same time. Thus, the acquisition and development of the necessary competencies in Data Science are carried out in a highly motivating environment. The development of activities related to this profile has had a direct impact on the students, being fundamental the motivation, the learning capacity and the continuous recycling of knowledge to which Computer Engineers are subjected.",
+  "citation": "@article{PPCientificoDCompeticion2021,\r\nauthor = \"David Guijo-Rubio and V{\\'i}ctor Manuel Vargas-Yun and Antonio Manuel Dur{\\'a}n-Rosal and Antonio Manuel G{\\'o}mez-Orellana and Javier Barbero-G{\\'o}mez and Juan Carlos Fern{\\'a}ndez and Pedro Antonio Guti{\\'e}rrez\",\r\ndoi = \"10.21071/ripadoc.v10i2.13256\",\r\nissn = \"2531-1336\",\r\njournal = \"Revista de Innovaci{\\'o}n y Buenas Pr{\\'a}cticas Docentes\",\r\nkeywords = \"Competicion, Experciencia profesional, Inteligencia artificial, Perfil profesional\",\r\nmonth = \"Oct\",\r\nnumber = \"2\",\r\npages = \"101-106\",\r\ntitle = \"{P}otenciando el perfil profesional {C}ient{\\'i}fico de {D}atos mediante din{\\'a}micas de competici{\\'o}n\",\r\nurl = \"doi.org/10.21071/ripadoc.v10i2.13256\",\r\nvolume = \"10\",\r\nyear = \"2021\",\r\n}\r\n\r\n\r\n"
+}

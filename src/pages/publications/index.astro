@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import PublicationRow from '../../components/PublicationRow.astro';
+import { getUi, researchItems } from '../../lib/content';
+import { t, extractQuartile } from '../../lib/utils';
+
+const lang = 'es';
+const ui = await getUi(lang);
+const items = await researchItems();
+const years = [...new Set(items.map((item) => String(item.year)).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+const qOrder = { Q1D1: 1, Q1: 2, Q2: 3, Q3: 4, Q4: 5 };
+const quartiles = [...new Set(items.filter((x) => x.kind === 'journal').map((x) => extractQuartile(x.impact)).filter((q) => q !== 'none'))].sort((a, b) => (qOrder[a] || 99) - (qOrder[b] || 99));
+---
+<BaseLayout lang={lang} routeKey="publications" title={t(ui, 'publications')}>
+  <PageIntro eyebrow={t(ui, 'research_output')} title={t(ui, 'publications')} description={t(ui, 'publications_desc')} />
+  <section class="container content-block">
+    <div class="card-surface filter-panel publication-filter-shell">
+      <div class="filter-heading"><p class="meta-label">{t(ui, 'publication_filters')}</p><h2>{t(ui, 'peer_reviewed')}</h2></div>
+      <div class="publication-filter-stack">
+        <div class="filter-controls publication-filter-grid publication-filter-grid-top"><label class="filter-search-field"><span>{t(ui, 'search_publications')}</span><input type="search" id="publication-search" placeholder={t(ui, 'search_publications')} /></label></div>
+        <div class="filter-controls publication-filter-grid publication-filter-grid-bottom">
+          <label><span>{t(ui, 'year')}</span><select id="publication-year"><option value="all">{t(ui, 'all_years')}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></label>
+          <label><span>{t(ui, 'article')}</span><select id="publication-type"><option value="all">{t(ui, 'all_types')}</option><option value="journal">{t(ui, 'journal_article')}</option><option value="conference">{t(ui, 'conference_paper')}</option></select></label>
+          <label><span>{t(ui, 'quartile')}</span><select id="publication-quartile"><option value="all">{t(ui, 'all_quartiles')}</option>{quartiles.map((q) => <option value={q}>{q}</option>)}<option value="none">{t(ui, 'without_quartile')}</option></select></label>
+          <label><span>{t(ui, 'sort_by')}</span><select id="publication-sort"><option value="recent">{t(ui, 'sort_recent')}</option><option value="oldest">{t(ui, 'sort_oldest')}</option><option value="impact">{t(ui, 'sort_impact')}</option><option value="title">{t(ui, 'sort_title')}</option></select></label>
+          <div class="filter-actions"><button type="button" class="inline-button subtle-button" id="publication-clear">{t(ui, 'clear_filters')}</button><button type="button" class="inline-button" id="publication-apply">{t(ui, 'apply_filters')}</button></div>
+        </div>
+        <p class="filter-result-count"><strong id="publication-count">{items.length}</strong> {t(ui, 'results')}</p>
+      </div>
+    </div>
+  </section>
+  <section class="container content-block publication-collection" id="publication-listing">
+    {items.map((row) => <PublicationRow row={row} ui={ui} lang={lang} />)}
+    <p id="publication-empty" class="publication-empty" hidden>{t(ui, 'no_results')}</p>
+  </section>
+</BaseLayout>

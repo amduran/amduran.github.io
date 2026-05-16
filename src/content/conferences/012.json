@@ -1,0 +1,13 @@
+{
+  "idx": 12,
+  "authors": "A. Nikolaou, P.A. Gutiérrez, <span class=\"bold\">A.M. Durán-Rosal</span>, F. Fernandez-Navarro, C. Hervás-Martínez and M. Pérez-Ortiz",
+  "title": "Detection of early warning signals in paleoclimate data using a genetic time series segmentation algorithm",
+  "congress": "Proceedings of the 2018 European Planetary Science Congress",
+  "date": "16th-21st September",
+  "year": 2018,
+  "city": "Berlin (Germany)",
+  "pages": "1 - 2",
+  "url": "https://meetingorganizer.copernicus.org/EPSC2018/EPSC2018-829-1.pdf",
+  "abstract": "We present a novel approach of analysing–visualising time series of a geophysical variable and we characterise its abrupt transitions in comparison to benchmark time series produced with model dynamical systems: a mathematical model (stochastic resonance) and a climate model of intermediate complexity (2D meridional ocean circulation with an atmospheric forcing). The method combines a genetic segmentation algorithm that uses ordinal regression and clusters the different segments of the time series around centroids located in a six-dimensional(6D) space of statistical metrics. After detecting statistical similarities it helps compare the type of transition observed in the time series to three separate studied types: a) noise transition, b) subcritical bifurcation crossing and c) transition to a limit cycle. The proposed method complements the causality analysis of a record of abrupt transitions in a geophysical system.",
+  "citation": "@InProceedings{A.Nikolaou2018,\r\n  author    = {A. Nikolaou, P.A. Gutiérrez, A.M. Durán-Rosal, F. Fernandez-Navarro, C. Hervás-Martínez and M. Pérez-Ortiz},\r\n  title     = {Detection of early warning signals in paleoclimate data using a genetic time series segmentation algorithm},\r\n  booktitle = {Proceedings of the 2018 European Planetary Science Congress},\r\n  year      = {2018},\r\n  volume    = {12},\r\n  number    = {EPSC2018-829-1},\r\n}"
+}

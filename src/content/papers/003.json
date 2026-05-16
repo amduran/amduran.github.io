@@ -1,0 +1,13 @@
+{
+  "idx": 3,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, M. Dorado-Moreno, P.A. Gutiérrez and C. Hervás-Martínez.",
+  "title": "Identification of extreme wave heights with an evolutionary algorithm in combination with a likelihood-based segmentation",
+  "journal": "Progress in Artificial Intelligence",
+  "volume": 6,
+  "year": 2017,
+  "pages": "59 - 66",
+  "impact": "SJR(2018): 0.513 Position: 71/191 (Q2) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://link.springer.com/article/10.1007%2Fs13748-016-0105-1",
+  "abstract": "This paper presents four configurations of a genetic algorithm (GA) combined with a local search (LS) method for time series segmentation with the purpose of correctly recognising extreme values. The LS method is based on likelihood maximisation of a beta distribution. The proposal is tested on three real ocean wave height time series, where extreme values are frequently found. Concretely, the time series are taken from two oceanographic buoys in the Gulf of Alaska, and another one from Puerto Rico. The results show that the different combinations of LS improve the results of the GA. Furthermore, the algorithm provides segmentations where extreme values are grouped in a well-defined cluster, which allows the study of the characteristics of this type of events.",
+  "citation": "@article{duran2017identification,\r\n  title={Identification of extreme wave heights with an evolutionary algorithm in combination with a likelihood-based segmentation},\r\n  author={Dur{\\'a}n-Rosal, Antonio M and Dorado-Moreno, Manuel and Guti{\\'e}rrez, Pedro A and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  journal={Progress in Artificial Intelligence},\r\n  volume={6},\r\n  number={1},\r\n  pages={59--66},\r\n  year={2017},\r\n  publisher={Springer}\r\n}\r\n"
+}

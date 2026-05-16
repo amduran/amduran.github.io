@@ -1,0 +1,13 @@
+{
+  "idx": 6,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, S. Salcedo-Sanz and C. Hervás-Martínez",
+  "title": "A statistically-driven Coral Reef Optimization algorithm for optimal size reduction of time series",
+  "journal": "Applied Soft Computing",
+  "volume": 63,
+  "year": 2018,
+  "pages": "139 - 153",
+  "impact": "JCR(2018): 4.873 Position: 20/134 (Q1) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S1568494617307007?via%3Dihub",
+  "abstract": "This paper is focused on reducing the number of elements in time series with minimum information loss, with specific applications on time series segmentation. A modification of the coral reefs optimization metaheuristic (CRO) is proposed for this purpose, which is called statistical CRO (SCRO), where the main parameters of the algorithm are adjusted based on the mean and standard deviation associated with the fitness distribution. Moreover, the algorithm is combined with the Bottom-Up and Top-Down methodologies (traditional local search methods for time series segmentation), resulting in a hybrid methodology (HSCRO). We evaluate the performance of these algorithms using 16 time series from different application areas. The statistically-driven version of CRO is shown to improve the results of the standard CRO, eliminating the necessity of manually adjusting the main parameters of the algorithm and dynamically adjusting these parameters throughout the evolution. Moreover, when compared with other local search methods and metaheuristics from the state of the art, HSCRO shows robust segmentation results, consistently obtaining lower approximation errors.",
+  "citation": "@article{duran2018statistically,\r\n  title={A statistically-driven Coral Reef Optimization algorithm for optimal size reduction of time series},\r\n  author={Duran-Rosal, Antonio M and Gutierrez, Pedro A and Salcedo-Sanz, Sancho and Hervas-Martinez, Cesar},\r\n  journal={Applied Soft Computing},\r\n  volume={63},\r\n  pages={139--153},\r\n  year={2018},\r\n  publisher={Elsevier}\r\n}\r\n"
+}

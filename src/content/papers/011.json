@@ -1,0 +1,13 @@
+{
+  "idx": 11,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, Á. Carmona-Poyato and C. Hervás-Martínez",
+  "title": "A hybrid dynamic exploitation barebones particle swarm optimisation algorithm for time series segmentation",
+  "journal": "Neurocomputing",
+  "volume": 353,
+  "year": 2019,
+  "pages": "45 - 55",
+  "impact": "JCR(2019): 4.438 Position: 28/136 (Q1) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S0925231219303224?via%3Dihub",
+  "abstract": "Large time series are difficult to be mined and preprocessed, hence reducing their number of points with minimum information loss is an active field of study. This paper proposes new methods based on time series segmentation, including the adaptation of the particle swarm optimisation algorithm (PSO) to this problem, and more advanced PSO versions, such as barebones PSO (BBPSO) and its exploitation version (BBePSO). Moreover, a novel algorithm is derived, referred to as dynamic exploitation barebones PSO (DBBePSO), which updates the importance of the social and cognitive components throughout the generations. All these algorithms are further improved by considering a final local search step based on the combination of two well-known standard segmentation algorithms (Bottom-Up and Top-Down). The performance of the different methods is evaluated using 15 time series from various application fields, and the results show that the novel algorithm (DBBePSO) and its hybrid version (HDBBePSO) outperform the rest of segmentation techniques.",
+  "citation": "@article{duran2019hybrid,\r\n  title={A hybrid dynamic exploitation barebones particle swarm optimisation algorithm for time series segmentation},\r\n  author={Dur{\\'a}n-Rosal, Antonio M and Gutierrez, Pedro A and Carmona-Poyato, Angel and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  journal={Neurocomputing},\r\n  volume={353},\r\n  pages={45--55},\r\n  year={2019},\r\n  publisher={Elsevier}\r\n}\r\n"
+}

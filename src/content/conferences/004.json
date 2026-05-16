@@ -1,0 +1,13 @@
+{
+  "idx": 4,
+  "authors": "M. Dorado-Moreno, <span class=\"bold\">A.M. Durán-Rosal</span>, D. Guijo-Rubio, P.A. Gutiérrez, L. Prieto, S. Salcedo-Sanz and C. Hervás-Martínez",
+  "title": "Multiclass Prediction of Wind Power Ramp Events Combining Reservoir Computing and Support Vector Machines",
+  "congress": "Proceedings of the 17th Conference of the Spanish Association for Artificial Intelligence (CAEPIA 2016)",
+  "date": "14th-16th September",
+  "year": 2016,
+  "city": "Salamanca (Spain)",
+  "pages": "300 - 309",
+  "url": "https://link.springer.com/chapter/10.1007%2F978-3-319-44636-3_28",
+  "abstract": "This paper proposes a reservoir computing architecture for predicting wind power ramp events (WPREs), which are strong increases or decreases of wind speed in a short period of time. This is a problem of high interest, because WPREs increases the maintenance costs of wind farms and hinders the energy production. The standard echo state network architecture is modified by replacing the linear regression used to compute the reservoir outputs by a nonlinear support vector machine, and past ramp function values are combined with reanalysis data to perform the prediction. Another novelty of the study is that we will predict three type of events (negative ramps, non-ramps and positive ramps), instead of binary classification of ramps, given that the type of ramp can be crucial for the correct maintenance of the farm. The model proposed obtains satisfying results, being able to correctly predict around 70% of WPREs and outperforming other models.",
+  "citation": "@inproceedings{dorado2016multiclass,\r\n  title={Multiclass prediction of wind power ramp events combining reservoir computing and support vector machines},\r\n  author={Dorado-Moreno, Manuel and Dur{\\'a}n-Rosal, Antonio Manuel and Guijo-Rubio, David and Guti{\\'e}rrez, Pedro Antonio and Prieto, Luis and Salcedo-Sanz, Sancho and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  booktitle={Conference of the Spanish Association for Artificial Intelligence},\r\n  pages={300--309},\r\n  year={2016},\r\n  organization={Springer}\r\n}\r\n"
+}

@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSite, getUi, collectionData } from '../lib/content';
+import { route } from '../lib/routes';
+import { t, byIdxDesc, authorsHtml } from '../lib/utils';
+
+const lang = 'es';
+const site = await getSite();
+const ui = await getUi(lang);
+const education = await collectionData('education');
+const experience = await collectionData('experience');
+const papers = await collectionData('papers');
+const teaching = await collectionData('teaching');
+---
+<BaseLayout lang={lang} routeKey="home" title={site.name}>
+  <section class="hero-section section-space">
+    <div class="container hero-grid refined-hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{t(ui, 'hero_eyebrow')}</p>
+        <h1>{site.name}</h1>
+        <p class="lead">{t(ui, 'hero_lead')}</p>
+        <p class="hero-text">{t(ui, 'hero_text')}</p>
+        <div class="hero-actions">
+          <a class="button-primary" href={route(lang, 'publications')}>{t(ui, 'view_publications')}</a>
+          <a class="button-secondary" href={route(lang, 'teaching')}>{t(ui, 'teaching_activity')}</a>
+          <a class="button-secondary" href={`/${site.cv}`} target="_blank" rel="noopener noreferrer">{t(ui, 'curriculum_vitae')}</a>
+          <a class="button-secondary" href={route(lang, 'contact')}>{t(ui, 'contact_cta')}</a>
+        </div>
+      </div>
+      <div class="hero-figure card-surface">
+        <img src={`/${site.portrait}`} alt={`Portrait of ${site.name}`} />
+        <div class="hero-note">
+          <p class="hero-note-title">{t(ui, 'research_areas')}</p>
+          <ul><li>Machine learning</li><li>Time series data mining</li><li>Prediction and segmentation</li><li>Applied artificial intelligence</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">{t(ui, 'academic_trajectory')}</p><h2>{t(ui, 'education')}</h2><p>{t(ui, 'education_desc')}</p></div>
+      <div class="grid-cards four-cols">
+        {education.map((row) => <article class="card-surface info-card"><p class="meta-label">{row.year}</p><h3>{row.title}</h3><p class="meta-strong">{row.entity}</p><p>{row.url_project ? <a href={row.url_project} target="_blank" rel="noopener noreferrer">{row.project}</a> : row.project} {row.grade && <span class="muted-inline">{row.grade}</span>}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space soft-section">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">{t(ui, 'academic_trajectory')}</p><h2>{t(ui, 'appointments')}</h2><p>{t(ui, 'appointments_desc')}</p></div>
+      <div class="stack-list">
+        {experience.map((row) => <article class="card-surface list-card"><div><p class="meta-label">{row.date_ini} — {row.date_end}</p><h3>{row.title}</h3><p class="meta-strong">{row.url_entity ? <a href={row.url_entity} target="_blank" rel="noopener noreferrer">{row.entity}</a> : row.entity}</p></div><p class="item-aside">{row.city}, {row.country}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container">
+      <div class="section-heading with-action"><div><p class="eyebrow">{t(ui, 'research_output')}</p><h2>{t(ui, 'selected_publications')}</h2><p>{t(ui, 'selected_publications_desc')}</p></div><a class="text-link" href={route(lang, 'publications')}>{t(ui, 'browse_all_publications')}</a></div>
+      <div class="publication-grid">
+        {papers.sort(byIdxDesc).slice(0, 4).map((row) => <article class="card-surface publication-card"><p class="meta-label">{t(ui, 'journal_article')} · {row.year}</p><h3><a href={route(lang, 'publication', row.idx)}>{row.title}</a></h3><p class="publication-authors" set:html={authorsHtml(row.authors)}></p><p class="publication-venue">{row.journal} · Vol. {row.volume} · {row.pages}</p>{row.impact && <p class="publication-impact">{row.impact}</p>}</article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space soft-section">
+    <div class="container two-column-layout">
+      <div>
+        <div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'teaching')}</p><h2>{t(ui, 'current_courses')}</h2><p>{t(ui, 'current_courses_desc')}</p></div>
+        <div class="stack-list compact-list">
+          {teaching.filter((x) => Number(x.current) === 1).sort(byIdxDesc).map((row) => <article class="card-surface mini-card"><p class="meta-label">{row.academic_year}</p><h3>{row.subject}</h3><p>{row.degree} · Year {row.course}</p><p class="mini-meta">{row.entity} · {row.type} · {row.hours} hours</p></article>)}
+        </div>
+        <a class="text-link spaced-link" href={route(lang, 'teaching')}>{t(ui, 'view_full_teaching')}</a>
+      </div>
+      <div>
+        <div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'research_activity')}</p><h2>{t(ui, 'projects_and_funding')}</h2><p>{t(ui, 'projects_and_funding_desc')}</p></div>
+        <div class="quick-stats">
+          <a class="card-surface stat-card" href={route(lang, 'projects')}><span class="stat-number">{t(ui, 'projects')}</span><span class="stat-text">{t(ui, 'projects_and_funding_desc')}</span></a>
+          <a class="card-surface stat-card" href={route(lang, 'background')}><span class="stat-number">{t(ui, 'awards_grants')}</span><span class="stat-text">{t(ui, 'background_page_desc')}</span></a>
+          <a class="card-surface stat-card" href={route(lang, 'outreach')}><span class="stat-number">{t(ui, 'outreach')}</span><span class="stat-text">{t(ui, 'social_impact')}</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

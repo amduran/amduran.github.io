@@ -1,0 +1,45 @@
+{
+  "idx": 2,
+  "label": {
+    "es": "Proyectos de acción social",
+    "en": "Social action projects"
+  },
+  "items": [
+    {
+      "title": {
+        "es": "FACE2FACE · Proyecto para personas con trastorno del espectro autista",
+        "en": "FACE2FACE · Project for people with Autism Spectrum Disorder"
+      },
+      "links": [
+        {
+          "label": {
+            "es": "Web principal",
+            "en": "Main website"
+          },
+          "url": "https://www.uco.es/ayrna/teaprojects/face2face.html"
+        },
+        {
+          "label": {
+            "es": "Cobertura en Diario Córdoba",
+            "en": "Diario Córdoba coverage"
+          },
+          "url": "https://www.diariocordoba.com/cordoba-ciudad/2019/11/06/app-ayudaran-personas-trastornos-espectro-36108406.html"
+        },
+        {
+          "label": {
+            "es": "Cobertura en Cordópolis",
+            "en": "Cordópolis coverage"
+          },
+          "url": "https://cordopolis.eldiario.es/cordoba-hoy/uco-trabaja-app-ayudar-personas-trastorno-espectro-autista_1_7115256.html"
+        },
+        {
+          "label": {
+            "es": "Cobertura en Europa Press",
+            "en": "Europa Press coverage"
+          },
+          "url": "https://amp.europapress.es/andalucia/noticia-universidad-cordoba-trabaja-dos-app-ayudar-personas-trastorno-espectro-autista-20191106185325.html"
+        }
+      ]
+    }
+  ]
+}

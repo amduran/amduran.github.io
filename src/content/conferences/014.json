@@ -1,0 +1,13 @@
+{
+  "idx": 14,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Detección y predicción de segmentos de altura de olas extremas",
+  "congress": "VI Congreso Cientı́fico de Investigadores en Formación. U. E. de Córdoba",
+  "date": "24th-26th January",
+  "year": 2018,
+  "city": "Córdoba (Spain)",
+  "pages": "509-512",
+  "url": "http://www.uco.es/ucopress/index.php/en/?option=com_hikashop&ctrl=product&task=show&cid=620&name=ebook-creando-redes-doctorales-vol-vi-la-generacion-del-conocimiento&Itemid=976&category_pathway=",
+  "abstract": "In this work, a methodology for the detection and prediction of Segments containing very high Significant Wave Height (SSWH) values in oceans, is proposed. This procedure is needed to determine potential changes in a long-term future operational environment of marine and coastal structures. The methodology transforms the time series into a sequence of labeled segments, using a genetic algorithm (GA) in combination with a likelihood-based local search. Then, Artificial Neural Networks models (ANN) are trained with a Multiobjective Evolutionary Algorithm (MOEA), with the objective of predicting the occurrence or not of SSWH events. The MOEA is designed to optimize the global accuracy and individual sensitivities for both classes, due to the imbalanced nature of the problem (SSWH are rarer than non SSWH). The methodology is applied to a time series collected from a buoy of the Gulf of Alaska, showing that the GA is able to group SSWH events in a specific cluster and that the MOEA obtains accurate ANN models when predicting these events.",
+  "citation": "@conference{182018,\r\nauthor = \"Antonio Manuel Dur{\\'a}n-Rosal and Pedro Antonio Guti{\\'e}rrez and C{\\'e}sar Herv{\\'a}s-Mart{\\'i}nez\",\r\nbooktitle = \"VI Congreso Cientı́fico de Investigadores en Formaci{\\'o}n\",\r\neditor = \"UCOPress. Editorial Universidad de C{\\'o}rdoba\",\r\nisbn = \"978-84-9927-239-9\",\r\nmonth = \"24th-26th January\",\r\norganization = \"C{\\'o}rdoba, Spain\",\r\npages = \"509-512\",\r\npublisher = \"Universidad de C{\\'o}rdoba\",\r\nseries = \"Creando Redes Doctorales: La generaci{\\'o}n del conocimiento\",\r\ntitle = \"{D}etecci{\\'o}n y predicci{\\'o}n de segmentos de altura de olas extremas\",\r\nurl = \"www.uco.es/ucopress/index.php/en/?option=com_hikashop{\\&}amp;ctrl=product{\\&}amp;task=show{\\&}amp;cid=620{\\&}amp;name=ebook-creando-redes-doctorales-vol-vi-la-generacion-del-conocimiento{\\&}amp;Itemid=976{\\&}amp;category_pathway=\",\r\nvolume = \"6\",\r\nyear = \"2018\",\r\n}\r\n\r\n"
+}

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { getUi, collectionData } from '../../lib/content';
+import { t, byIdxDesc } from '../../lib/utils';
+const lang = 'es';
+const ui = await getUi(lang);
+const teaching = await collectionData('teaching');
+const directed = await collectionData('directed_projects');
+const innovation = await collectionData('teaching_innovation_projects');
+const rows = (current) => teaching.filter((x) => Number(x.current) === current).sort(byIdxDesc);
+---
+<BaseLayout lang={lang} routeKey="teaching" title={t(ui, 'teaching_page_title')}>
+  <PageIntro eyebrow={t(ui, 'teaching')} title={t(ui, 'teaching_page_title')} description={t(ui, 'teaching_page_desc')} />
+  <section class="container content-block"><div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'current_activity')}</p><h2>{t(ui, 'current_courses')}</h2></div><div class="responsive-table card-surface refined-table"><table><thead><tr><th>{t(ui, 'academic_year')}</th><th>{t(ui, 'subject')}</th><th>{t(ui, 'degree')}</th><th>{t(ui, 'institution')}</th><th>{t(ui, 'role')}</th><th>{t(ui, 'hours')}</th></tr></thead><tbody>{rows(1).map((row) => <tr><td>{row.academic_year}</td><td>{row.subject}</td><td>{row.degree} ({row.course})</td><td>{row.entity}</td><td>{row.type}</td><td>{row.hours}</td></tr>)}</tbody></table></div></section>
+  <section class="container content-block"><div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'teaching_record')}</p><h2>{t(ui, 'past_courses')}</h2></div><div class="responsive-table card-surface refined-table"><table><thead><tr><th>{t(ui, 'academic_year')}</th><th>{t(ui, 'subject')}</th><th>{t(ui, 'degree')}</th><th>{t(ui, 'institution')}</th><th>{t(ui, 'role')}</th><th>{t(ui, 'hours')}</th></tr></thead><tbody>{rows(0).map((row) => <tr><td>{row.academic_year}</td><td>{row.subject}</td><td>{row.degree} ({row.course})</td><td>{row.entity}</td><td>{row.type}</td><td>{row.hours}</td></tr>)}</tbody></table></div></section>
+  <section class="container content-block"><div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'supervision')}</p><h2>{t(ui, 'directed_projects')}</h2></div><div class="grid-cards two-cols">{directed.map((row) => <article class="card-surface project-card"><h3>{row.title}</h3><p><span>{t(ui, 'author')}</span>{row.author}</p><p><span>{t(ui, 'supervisors')}</span><span class="inline-rich-text" set:html={row.supervisors}></span></p><p><span>{t(ui, 'year')}</span>{row.year}</p><p><span>{t(ui, 'qualification')}</span>{row.qualification}</p></article>)}</div></section>
+  <section class="container content-block"><div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'teaching_innovation')}</p><h2>{t(ui, 'innovation_projects')}</h2></div><div class="grid-cards two-cols">{innovation.map((row) => <article class="card-surface project-card"><p class="meta-label">{row.academic_year}</p><h3>{row.title}</h3><p><span>{t(ui, 'reference')}</span>{row.reference}</p><p><span>{t(ui, 'entity')}</span>{row.entity}</p><p><span>{t(ui, 'principal_researchers')}</span><span class="inline-rich-text" set:html={row.ips}></span></p><p><span>{t(ui, 'funding')}</span>{row.money} €</p><p><span>{t(ui, 'role')}</span>{row.rol}</p></article>)}</div></section>
+</BaseLayout>

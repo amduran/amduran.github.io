@@ -1,0 +1,13 @@
+{
+  "idx": 15,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, D. Guijo-Rubio, V.M. Vargas-Yun, A.M. Gómez-Orellana, P.A. Gutiérrez y J.C. Fernández",
+  "title": "Gamifying the classroom for the acquisition of skills associated with Machine Learning: a two-year case study",
+  "congress": "Proceedings of the 13th International Conference on European Transnational Education (ICEUTE 2022)",
+  "date": " 5th-7th September",
+  "year": 2022,
+  "city": "Salamanca (Spain)",
+  "pages": "1 - 11",
+  "url": "http://2022.iceuteconference.eu/conference-proceedings/",
+  "abstract": "Machine learning (ML) is the field of science that combines knowledge from artificial intelligence, statistics and mathematics intending to give computers the ability to learn from data without being explicitly programmed to do so. It falls under the umbrella of Data Science and is usually developed by Computer Engineers becoming what is known as Data Scientists. Developing the necessary competences in this field is not a trivial task, and applying innovative methodologies such as gamification can smooth the initial learning curve. In this context, communities offering platforms for open competitions such as Kaggle can be used as a motivating element. The main objective of this work is to gamify the classroom with the idea of providing students with valuable hands-on experience by means of addressing a real problem, as well as the possibility to cooperate and compete simultaneously to acquire ML competences. The innovative teaching experience carried out during two years meant a great motivation, an improvement of the learning capacity and a continuous recycling of knowledge to which Computer Engineers are faced to.",
+  "citation": "@conference{Duran2022,\r\nauthor = \"Antonio Manuel Dur{\\'a}n-Rosal and David Guijo-Rubio and V{\\'i}ctor Manuel Vargas-Yun and Antonio Manuel G{\\'o}mez-Orellana and Pedro Antonio Guti{\\'e}rrez and Juan Carlos Fern{\\'a}ndez\",\r\nbooktitle = \"Proceedings of the 13th International Conference on European Transnational Education (ICEUTE 2022)\",\r\ntitle = \"{G}amifying the classroom for the acquisition of skills associated with {M}achine {L}earning: a two-year case study\",\r\nyear = \"2022\",\r\n}"
+}

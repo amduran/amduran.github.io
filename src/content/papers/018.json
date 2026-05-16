@@ -1,0 +1,13 @@
+{
+  "idx": 18,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, M. Carbonero-Ruz, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "A mixed distribution to fix the threshold for Peak-Over-Threshold wave height estimation",
+  "journal": "Scientifc Reports",
+  "volume": 12,
+  "year": 2022,
+  "pages": "17327",
+  "impact": "JCR(2022): 4.6 Position: 22/73 (Q2) Category: MULTIDISCIPLINARY SCIENCES",
+  "url": "https://www.nature.com/articles/s41598-022-22243-8",
+  "abstract": "Modelling extreme values distributions, such as wave height time series where the higher waves are much less frequent than the lower ones, has been tackled from the point of view of the Peak-Over-Threshold (POT) methodologies, where modelling is based on those values higher than a threshold. This threshold is usually predefined by the user, while the rest of values are ignored. In this paper, we propose a new method to estimate the distribution of the complete time series, including both extreme and regular values. This methodology assumes that extreme values time series can be modelled by a normal distribution in a combination of a uniform one. The resulting theoretical distribution is then used to fix the threshold for the POT methodology. The methodology is tested in nine real-world time series collected in the Gulf of Alaska, Puerto Rico and Gibraltar (Spain), which are provided by the National Data Buoy Center (USA) and Puertos del Estado (Spain). By using the Kolmogorov-Smirnov statistical test, the results confirm that the time series can be modelled with this type of mixed distribution. Based on this, the return values and the confidence intervals for wave height in different periods of time are also calculated.",
+  "citation": "@article{durandistribution2022,\r\nauthor = \"Antonio Manuel Dur{\\'a}n-Rosal and Mariano Carbonero-Ruz and Pedro Antonio Guti{\\'e}rrez and C{\\'e}sar Herv{\\'a}s-Mart{\\'i}nez\",\r\ndoi = \"10.1038/s41598-022-22243-8\",\r\nissn = \"2045-2322\",\r\njournal = \"Scientific Reports\",\r\nmonth = \"October\",\r\npages = \"17327\",\r\ntitle = \"{A} mixed distribution to fix the threshold for {P}eak-{O}ver-{T}hreshold wave height estimation\",\r\nurl = \"https://www.nature.com/articles/s41598-022-22243-8\",\r\nvolume = \"12\",\r\nyear = \"2022\",\r\n}\r\n"
+}

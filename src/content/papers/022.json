@@ -1,0 +1,13 @@
+{
+  "idx": 22,
+  "authors": "V.M. Vargas, <span class=\"bold\">A.M. Durán-Rosal</span>, D. Guijo-Rubio, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Generalised Triangular Distributions for ordinal deep learning: novel proposal and optimisation",
+  "journal": "Information Sciences",
+  "volume": 648,
+  "year": 2023,
+  "pages": "119606",
+  "impact": "JCR(2022): 8.1, Position: 13/158 (Q1D1) Category: COMPUTER SCIENCE, INFORMATION SYSTEMS",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S002002552301191X",
+  "abstract": "Deep learning techniques for ordinal classification have recently gained significant attention. Predicting an ordinal variable, that is, a variable that demonstrates a natural relationship between categories, is of relevance for a number of real-world problems in various fields of knowledge. For example, a medical diagnosis can occur at different stages of the disease. Applying standard classifiers to ordered labels can lead to errors in distant categories, when errors in an ordinal problem ideally tend to be produced in adjacent classes because of their similarity. To address this issue, we propose a soft labelling approach based on generalised triangular distributions, which are asymmetric and different for each class. The parameters of these distributions are determined using a metaheuristic and are specifically adapted to the given problem. Moreover, this approach enables the model to avoid errors in distant classes (e.g. classifying a patient with a severe disease as healthy). A comprehensive comparison was performed using eight datasets and five performance metrics. The main advantage of the proposed soft-labelling approach is that it adapts the distributions to each problem, resulting in greater flexibility and better performance. The results and statistical analysis show that the proposed methodology significantly outperforms all other methods.",
+  "citation": "@article{vargas2023,\r\nauthor = \"V{\\'i}ctor Manuel Vargas and Antonio Manuel Dur{\\'a}n-Rosal and David Guijo-Rubio and Pedro Antonio Guti{\\'e}rrez and C{\\'e}sar Herv{\\'a}s-Mart{\\'i}nez\",\r\ntitle = \"{G}eneralised {T}riangular {D}istributions for ordinal deep learning: novel proposal and optimisation\",\r\njournal = \"Information Sciences\",\r\nyear = \"2023\",\r\n}\r\n\r\n\r\n"
+}

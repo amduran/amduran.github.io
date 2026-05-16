@@ -1,0 +1,24 @@
+---
+const { to, detail = false } = Astro.props;
+---
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href={to}>{to}</a>…</p>
+    {detail ? (
+      <script define:vars={{ to }}>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id') || params.get('idx');
+        window.location.replace(id ? `${to}${encodeURIComponent(id)}/` : to);
+      </script>
+    ) : (
+      <script define:vars={{ to }}>window.location.replace(to);</script>
+    )}
+  </body>
+</html>

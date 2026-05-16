@@ -1,0 +1,13 @@
+{
+  "idx": 13,
+  "authors": "D. Guijo-Rubio, <span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, A.M. Gómez-Orellana, C. Casanova-Mateo, J. Sanz-Justo, S. Salcedo-Sanz and C. Hervás-Martínez",
+  "title": "Evolutionary artificial neural networks for accurate solar radiation prediction",
+  "journal": "Energy",
+  "volume": 210,
+  "year": 2020,
+  "pages": "118374",
+  "impact": "JCR(2020): 7.147 Position: 3/62 (Q1) Category: THERMODYNAMICS",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S036054422031481X?via%3Dihub",
+  "abstract": "This paper evaluates the performance of different evolutionary neural network models in a problem of solar radiation prediction at Toledo, Spain. The prediction problem has been tackled exclusively from satellite-based measurements and variables, which avoids the use of data from ground stations or atmospheric soundings. Specifically, three types of neural computation approaches are considered: neural networks with sigmoid-based neurons, radial basis function units and product units. In all cases these neural computation algorithms are trained by means of evolutionary algorithms, leading to robust and accurate models for solar radiation prediction. The results obtained in the solar radiation estimation at the radiometric station of Toledo show an excellent performance of evolutionary neural networks tested. The structure sigmoid unit-product unit with evolutionary training has been shown as the best model among all tested in this paper, able to obtain an extremely accurate prediction of the solar radiation from satellite images data, and outperforming all other evolutionary neural networks tested, and alternative Machine Learning approaches such as Support Vector Regressors or Extreme Learning Machines.",
+  "citation": "@article{guijo2020evolutionary,\r\n  title={Evolutionary artificial neural networks for accurate solar radiation prediction},\r\n  author={Guijo-Rubio, D and Dur{\\'a}n-Rosal, AM and Guti{\\'e}rrez, PA and G{\\'o}mez-Orellana, AM and Casanova-Mateo, C and Sanz-Justo, J and Salcedo-Sanz, S and Herv{\\'a}s-Mart{\\'\\i}nez, C},\r\n  journal={Energy},\r\n  volume={210},\r\n  pages={118374},\r\n  year={2020},\r\n  publisher={Elsevier}\r\n}\r\n"
+}

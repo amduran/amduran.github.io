@@ -1,0 +1,13 @@
+{
+  "idx": 3,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, M. Dorado-Moreno, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "On the Use of the Beta Distribution for a Hybrid Time Series Segmentation Algorithm",
+  "congress": "Proceedings of the 17th Conference of the Spanish Association for Artificial Intelligence (CAEPIA 2016)",
+  "date": "14th-16th September",
+  "year": 2016,
+  "city": "Salamanca (Spain)",
+  "pages": "418 - 427",
+  "url": "https://link.springer.com/chapter/10.1007%2F978-3-319-44636-3_39",
+  "abstract": "This paper presents a local search (LS) method based on the beta distribution for time series segmentation with the purpose of correctly representing extreme values of the underlying variable studied. The LS procedure is combined with an evolutionary algorithm (EA) which segments time series trying to obtain a given number of homogeneous groups of segments. The proposal is tested on a real problem of wave height estimation, where extreme high waves are frequently found. The results show that the LS is able to significantly improve the clustering quality of the solutions obtained by the EA. Moreover, the best segmentation clearly groups extreme waves in a separate cluster and characterizes them according to their centroid.",
+  "citation": "@inproceedings{duran2016use,\r\n  title={On the Use of the Beta Distribution for a Hybrid Time Series Segmentation Algorithm},\r\n  author={Dur{\\'a}n-Rosal, Antonio M and Dorado-Moreno, Manuel and Guti{\\'e}rrez, Pedro A and Herv{\\'a}s-Mart{\\'\\i}nez, Cesar},\r\n  booktitle={Conference of the Spanish Association for Artificial Intelligence},\r\n  pages={418--427},\r\n  year={2016},\r\n  organization={Springer}\r\n}\r\n"
+}

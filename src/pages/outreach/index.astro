@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { getUi, collectionData } from '../../lib/content';
+import { t, localize } from '../../lib/utils';
+const lang = 'es';
+const ui = await getUi(lang);
+const sections = await collectionData('outreach');
+---
+<BaseLayout lang={lang} routeKey="outreach" title={t(ui, 'outreach_page_title')}>
+  <PageIntro eyebrow={t(ui, 'outreach')} title={t(ui, 'outreach_page_title')} description={t(ui, 'outreach_page_desc')} />
+  <section class="container content-block"><div class="editorial-stack">{sections.map((section) => <article class="card-surface editorial-block"><p class="meta-label">{localize(section.label, lang)}</p>{section.items.map((item) => <div class="editorial-item"><h2>{localize(item.title, lang)}</h2><ul class:list={["resource-list", item.links.length > 6 && 'two-columns-list']}>{item.links.map((link) => <li><a href={link.url} target="_blank" rel="noopener noreferrer">{localize(link.label, lang)}</a></li>)}</ul></div>)}</article>)}</div></section>
+</BaseLayout>

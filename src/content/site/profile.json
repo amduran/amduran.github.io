@@ -1,0 +1,50 @@
+{
+  "name": "Antonio M. Durán-Rosal",
+  "brand": "AMDR",
+  "email": "amduran@uloyola.es",
+  "phone": "+34 957 222 100 (Ext. 2252)",
+  "location": "Universidad Loyola Andalucía · Córdoba, Spain",
+  "address": "Escritor Castilla Aguayo, 4 · Córdoba, Spain · 14004",
+  "cv": "download/cv.pdf",
+  "portrait": "img/antonio.jpg",
+  "academic_links": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.es/citations?user=2YoTlEoAAAAJ&hl=es"
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0000-0003-4587-357X"
+    },
+    {
+      "label": "ResearchGate",
+      "url": "https://www.researchgate.net/profile/Antonio-Duran-Rosal"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/antonio-manuel-dur%C3%A1n-rosal-99ba92a5/"
+    }
+  ],
+  "social_links": [
+    {
+      "icon": "fab fa-linkedin-in",
+      "url": "https://www.linkedin.com/in/antonio-manuel-dur%C3%A1n-rosal-99ba92a5/"
+    },
+    {
+      "icon": "fab fa-github",
+      "url": "https://github.com/ayrna/tssa#usage"
+    },
+    {
+      "icon": "ai ai-google-scholar",
+      "url": "https://scholar.google.es/citations?user=2YoTlEoAAAAJ&hl=es"
+    },
+    {
+      "icon": "fab fa-orcid",
+      "url": "https://orcid.org/0000-0003-4587-357X"
+    },
+    {
+      "icon": "ai ai-researchgate",
+      "url": "https://www.researchgate.net/profile/Antonio-Duran-Rosal"
+    }
+  ]
+}

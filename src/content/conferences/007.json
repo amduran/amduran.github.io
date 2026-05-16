@@ -1,0 +1,13 @@
+{
+  "idx": 7,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, D. Guijo-Rubio, P.A. Gutiérrez, S. Salcedo-Sanz and C. Hervás-Martínez",
+  "title": "A coral reef optimization algorithm for wave height time series segmentation problems",
+  "congress": "14th International Work-Conference on Artificial and Natural Neural Networks (IWANN2017)",
+  "date": "14th-16th June",
+  "year": 2017,
+  "city": "Cádiz (Spain)",
+  "pages": "673 - 684",
+  "url": "https://link.springer.com/chapter/10.1007%2F978-3-319-59153-7_58",
+  "abstract": "Time series segmentation can be approached using metaheuristics procedures such as genetic algorithms (GAs) methods, with the purpose of automatically finding segments and determine similarities in the time series with the lowest possible clustering error. In this way, segments belonging to the same cluster must have similar properties, and the dissimilarity between segments of different clusters should be the highest possible. In this paper we tackle a specific problem of significant wave height time series segmentation, with application in coastal and ocean engineering. The basic idea in this case is that similarity between segments can be used to characterise those segments with high significant wave heights, and then being able to predict them. A recently metaheuristic, the Coral Reef Optimization (CRO) algorithm is proposed for this task, and we analyze its performance by comparing it with that of a GA in three wave height time series collected in three real buoys (two of them in the Gulf of Alaska and another one in Puerto Rico). The results show that the CRO performance is better than the GA in this problem of time series segmentation, due to the better exploration of the search space obtained with the CRO.",
+  "citation": "@inproceedings{duran2017coral,\r\n  title={A Coral Reef Optimization Algorithm for Wave Height Time Series Segmentation Problems},\r\n  author={Dur{\\'a}n-Rosal, Antonio Manuel and Guijo-Rubio, David and Guti{\\'e}rrez, Pedro Antonio and Salcedo-Sanz, Sancho and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  booktitle={International Work-Conference on Artificial Neural Networks},\r\n  pages={673--684},\r\n  year={2017},\r\n  organization={Springer}\r\n}\r\n"
+}

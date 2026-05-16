@@ -1,0 +1,13 @@
+{
+  "idx": 12,
+  "authors": "Á. Carmona-Poyato, N.L. Fernández-García, F.J. Madrid-Cuevas and <span class=\"bold\">A.M. Durán-Rosal</span>",
+  "title": "A new approach for optimal time-series segmentation",
+  "journal": "Pattern Recognition Letters",
+  "volume": 135,
+  "year": 2020,
+  "pages": "153 - 159",
+  "impact": "JCR(2020): 3.756 Position: 46/140 (Q2) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S0167865520301264?via%3Dihub",
+  "abstract": "Emerging technologies have led to the creation of huge databases that require reducing their high dimensionality to be analysed. Many suboptimal methods have been proposed for this purpose. On the other hand, few efficient optimal methods have been proposed due to their high computational complexity. However, these methods are necessary to evaluate the performance of suboptimal methods. This paper proposes a new optimal approach, called OSTS, to improve the segmentation of time series. The proposed method is based on A* algorithm and it uses an improved version of the well-known Salotti method for obtaining optimal polygonal approximations. Firstly, a suboptimal method for time-series segmentation is applied to obtain pruning values. In this case, a suboptimal method based on Bottom-Up technique is selected. Then, the results of the suboptimal method are used as pruning values to reduce the computational time of the proposed method. The proposal has been compared to other suboptimal methods and the results have shown that the method is optimal, and, in some cases, the computational time is similar to other suboptimal methods.",
+  "citation": "@article{carmona2020new,\r\n  title={A new approach for optimal time-series segmentation},\r\n  author={Carmona-Poyato, Angel and Fern{\\'a}ndez-Garc{\\'\\i}a, Nicol{\\'a}s Luis and Madrid-Cuevas, Francisco Jos{\\'e} and Dur{\\'a}n-Rosal, Antonio Manuel},\r\n  journal={Pattern Recognition Letters},\r\n  volume={135},\r\n  pages={153--159},\r\n  year={2020},\r\n  publisher={Elsevier}\r\n}\r\n"
+}

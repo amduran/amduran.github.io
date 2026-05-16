@@ -1,0 +1,13 @@
+{
+  "idx": 16,
+  "authors": "Á. Carmona-Poyato, N.L. Fernández-García, F.J. Madrid-Cuevas and <span class=\"bold\">A.M. Durán-Rosal</span>",
+  "title": "A new approach for optimal offline time-series segmentation with error bound guarantee",
+  "journal": "Pattern Recognition",
+  "volume": 115,
+  "year": 2021,
+  "pages": "107917",
+  "impact": "JCR(2021): 8.518 Position: 22/144 (Q1) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S0031320321001047?via%3Dihub",
+  "abstract": "Piecewise Linear Approximation is one of the most commonly used strategies to represent time series effectively and approximately. This approximation divides the time series into non-overlapping segments and approximates each segment with a straight line. Many suboptimal methods were proposed for this purpose. This paper proposes a new optimal approach, called OSFS, based on feasible space (FS) [1], that minimizes the number of segments of the approximation and guarantees the error bound using the -norm. On the other hand, a new performance measure combined with the OSFS method has been used to evaluate the performance of some suboptimal methods and that of the optimal method that minimizes the holistic approximation error (-norm). The results have shown that the OSFS method is optimal and demonstrates the advantages of -norm over -norm.",
+  "citation": "@article{carmona2021new,\r\n  title={A new approach for optimal offline time-series segmentation with error bound guarantee},\r\n  author={Carmona-Poyato, {\\'A}ngel and Fern{\\'a}ndez-Garcia, Nicol{\\'a}s Luis and Madrid-Cuevas, Francisco Jos{\\'e} and Dur{\\'a}n-Rosal, Antonio Manuel},\r\n  journal={Pattern Recognition},\r\n  volume={115},\r\n  pages={107917},\r\n  year={2021},\r\n  publisher={Elsevier}\r\n}\r\n"
+}

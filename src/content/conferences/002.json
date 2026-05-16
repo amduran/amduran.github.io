@@ -1,0 +1,13 @@
+{
+  "idx": 2,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, F.J. Martínez-Estudillo and C. Hervás-Martínez",
+  "title": "Time Series Representation by a Novel Hybrid Segmentation Algorithm",
+  "congress": "1th International Conference on Hybrid Artificial Intelligent Systems (HAIS2016)",
+  "date": "18th-20th April",
+  "year": 2016,
+  "city": "Sevilla (Spain)",
+  "pages": "163 - 173",
+  "url": "https://link.springer.com/chapter/10.1007%2F978-3-319-32034-2_14",
+  "abstract": "Time series representation can be approached by segmentation genetic algorithms (GAs) with the purpose of automatically finding segments approximating the time series with the lowest possible error. Although this is an interesting data mining field, obtaining the optimal segmentation of time series in different scopes is a very challenging task. In this way, very accurate algorithms are needed. On the other hand, it is well-known that GAs are relatively poor when finding the precise optimum solution in the region where they converge. Thus, this paper presents a hybrid GA algorithm including a local search method, aimed to improve the quality of the final solution. The local search algorithm is based on two well-known algorithms: Bottom-Up and Top-Down. A real-world time series in the Spanish Stock Market field (IBEX35) and a synthetic database (Donoho-Johnstone) used in other researches were used to test the proposed methodology.",
+  "citation": "@inproceedings{duran2016time,\r\n  title={Time series representation by a novel hybrid segmentation algorithm},\r\n  author={Dur{\\'a}n-Rosal, Antonio Manuel and Guti{\\'e}rrez-Pe{\\~n}a, Pedro Antonio and Mart{\\'\\i}nez-Estudillo, Francisco Jos{\\'e} and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  booktitle={International Conference on Hybrid Artificial Intelligence Systems},\r\n  pages={163--173},\r\n  year={2016},\r\n  organization={Springer}\r\n}\r\n"
+}

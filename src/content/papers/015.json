@@ -1,0 +1,13 @@
+{
+  "idx": 15,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, J. Camacho-Cañamón, P.A. Gutiérrez, M.V. Guiote-Moreno, E. Rodríguez-Cáceres, J.A. Vallejo-Casas and C. Hervás-Martínez",
+  "title": "Ordinal classification of the affectation level of 3D-images in Parkinson diseases",
+  "journal": "Scientifc Reports",
+  "volume": 11,
+  "year": 2021,
+  "pages": "7067",
+  "impact": "JCR(2021): 4.996 Position: 19/73 (Q2) Category: MULTIDISCIPLINARY SCIENCES",
+  "url": "https://www.nature.com/articles/s41598-021-86538-y",
+  "abstract": "Parkinson’s disease is characterised by a decrease in the density of presynaptic dopamine transporters in the striatum. Frequently, the corresponding diagnosis is performed using a qualitative analysis of the 3D-images obtained after the administration of 123I-ioflupane, considering a binary classification problem (absence or existence of Parkinson’s disease). In this work, we propose a new methodology for classifying this kind of images in three classes depending on the level of severity of the disease in the image. To tackle this problem, we use an ordinal classifier given the natural order of the class labels. A novel strategy to perform feature selection is developed because of the large number of voxels in the image, and a method for generating synthetic images is proposed to improve the quality of the classifier. The methodology is tested on 434 studies conducted between September 2015 and January 2019, divided into three groups: 271 without alteration of the presynaptic nigrostriatal pathway, 73 with a slight alteration and 90 with severe alteration. Results confirm that the methodology improves the state-of-the-art algorithms, and that it is able to find informative voxels outside the standard regions of interest used for this problem. The differences are assessed by statistical tests which show that the proposed image ordinal classification could be considered as a decision support system in medicine.",
+  "citation": "@article{duran2021ordinal,\r\n  title={Ordinal classification of the affectation level of 3D-images in Parkinson diseases},\r\n  author={Dur{\\'a}n-Rosal, Antonio M and Camacho-Ca{\\~n}am{\\'o}n, Julio and Guti{\\'e}rrez, Pedro Antonio and Moreno, Maria Victoria Guiote and Rodr{\\'\\i}guez-C{\\'a}ceres, Ester and Casas, Juan Antonio Vallejo and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  journal={Scientific Reports},\r\n  volume={11},\r\n  number={1},\r\n  pages={1--13},\r\n  year={2021},\r\n  publisher={Nature Publishing Group}\r\n}\r\n"
+}

@@ -1,0 +1,13 @@
+{
+  "idx": 5,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, J.C. Fernández, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Hybridization of neural network models for the prediction of extreme significant wave height segments",
+  "congress": "2016 IEEE Symposium Series on Computational Intelligence (IEEE SSCI 2016)",
+  "date": "6th-9th December",
+  "year": 2016,
+  "city": "Athens (Greece)",
+  "pages": "1 - 8",
+  "url": "https://ieeexplore.ieee.org/document/7850144",
+  "abstract": "This work proposes a hybrid methodology for the detection and prediction of Extreme Significant Wave Height (ESWH) periods in oceans. In a first step, wave height time series is approximated by a labeled sequence of segments, which is obtained using a genetic algorithm in combination with a likelihood-based segmentation (GA+LS). Then, an artificial neural network classifier with hybrid basis functions is trained with a multiobjetive evolutionary algorithm (MOEA) in order to predict the occurrence of future ESWH segments based on past values. The methodology is applied to a buoy in the Gulf of Alaska and another one in Puerto Rico. The results show that the GA+LS is able to segment and group the ESWH values, and the neural network models, obtained by the MOEA, make good predictions maintaining a balance between global accuracy and minimum sensitivity for the detection of ESWH events. Moreover, hybrid neural networks are shown to lead to better results than pure models.",
+  "citation": "@inproceedings{duran2016hybridization,\r\n  title={Hybridization of neural network models for the prediction of Extreme Significant Wave Height segments},\r\n  author={Dur{\\'a}n-Rosal, Antonio M and Fern{\\'a}ndez, Juan C and Guti{\\'e}rrez, Pedro A and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  booktitle={2016 IEEE Symposium Series on Computational Intelligence (SSCI)},\r\n  pages={1--8},\r\n  year={2016},\r\n  organization={IEEE}\r\n}\r\n"
+}

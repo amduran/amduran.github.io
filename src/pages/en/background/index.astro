@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+import { getUi, collectionData } from '../../../lib/content';
+import { t } from '../../../lib/utils';
+const lang = 'en';
+const ui = await getUi(lang);
+const grants = await collectionData('grants');
+const awards = await collectionData('awards');
+const extra = await collectionData('extra_education');
+---
+<BaseLayout lang={lang} routeKey="background" title={t(ui, 'background_page_title')}>
+  <PageIntro eyebrow={t(ui, 'background')} title={t(ui, 'background_page_title')} description={t(ui, 'background_page_desc')} />
+  <section class="container content-block"><div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'research_support')}</p><h2>{t(ui, 'grants')}</h2></div><div class="grid-cards three-cols">{grants.map((row) => <article class="card-surface info-card"><p class="meta-label">{t(ui, 'grant')}</p><h3>{row.name}</h3><p class="meta-strong">{row.entity}</p><p>{row.date_ini} — {row.date_end}</p><p>{row.entity_realisation}, {row.school}, {row.country}</p></article>)}</div></section>
+  <section class="container content-block"><div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'academic_recognition')}</p><h2>{t(ui, 'awards')}</h2></div><div class="grid-cards three-cols">{awards.map((row) => <article class="card-surface info-card"><p class="meta-label">{t(ui, 'award')}</p><h3>{row.description}</h3><p class="meta-strong">{row.date}</p><p>{row.entity}</p></article>)}</div></section>
+  <section class="container content-block"><div class="section-heading left-aligned"><p class="eyebrow">{t(ui, 'complementary_learning')}</p><h2>{t(ui, 'extra_education')}</h2></div><div class="grid-cards three-cols">{extra.map((row) => <article class="card-surface info-card"><p class="meta-label">{t(ui, 'course_training')}</p><h3>{row.title}</h3><p class="meta-strong">{row.date} · {row.hours} hours</p><p>{row.entity}</p></article>)}</div></section>
+</BaseLayout>

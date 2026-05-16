@@ -1,0 +1,13 @@
+{
+  "idx": 25,
+  "authors": "Mariano Carbonero-Ruz, F. Fernández-Navarro <span class=\"bold\">A.M. Durán-Rosal</span>, and J. Pérez-Rodríguez ",
+  "title": "A hybrid optimization and data-driven approach to understand the role of the risk-aversion profile parameter in portfolio optimization problems with shorting constraints",
+  "journal": "Operations Research Perspectives",
+  "volume": 15,
+  "year": 2025,
+  "pages": "100353",
+  "impact": "JCR(2024): 3.7 Position: 30/106 (Q2) Category: OPERATIONS RESEARCH & MANAGEMENT SCIENCE\r\n",
+  "url": "https://www.sciencedirect.com/science/article/pii/S2214716025000296",
+  "abstract": "This study contributes to the optimization literature with an approach that would help investors understand how the risk-aversion profile hyperparameter affects excess returns, risk, and Sharpe ratio curves in portfolio optimization problems with short selling constraints. These curves were characterized by studying the original optimization problem and reducing it to a one-dimensional optimization problem. The problem variable was the excess return, and the minimum level of risk is expressed as a function of it. An approach to the functional form of the minimum risk level curve was also proposed, which allows us to determine an analytical expression for the aforementioned curves. The study provides significant results for the financial literature, such as (i) an upper and lower bound for the risk aversion profile hyperparameter; (ii) the optimal value for the risk aversion profile hyperparameter; (iii) a reduced version of the optimization problem that is easier to solve, and of course (iv) an analytical expression for the excess return, risk and Sharpe ratio curves as functions of the aforementioned hyperparameters. All of these results are reported using the Mean Squared Variance (MSV) portfolio optimization problem as the baseline model, representing the two objectives of the problem minimization function (excess return and risk) in the same unit.",
+  "citation": "@article{carbonero2025hybrid,\r\n  title={A hybrid optimization and data-driven approach to understand the role of the risk-aversion profile parameter in portfolio optimization problems with shorting constraints},\r\n  author={Carbonero-Ruz, Mariano and Fern{\\'a}ndez-Navarro, Francisco and Dur{\\'a}n-Rosal, Antonio M and P{\\'e}rez-Rodr{\\'\\i}guez, Javier},\r\n  journal={Operations Research Perspectives},\r\n  pages={100353},\r\n  year={2025},\r\n  publisher={Elsevier}\r\n}"
+}

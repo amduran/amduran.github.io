@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { getUi, collectionData } from '../../lib/content';
+import { t } from '../../lib/utils';
+const lang = 'es';
+const ui = await getUi(lang);
+const projects = await collectionData('projects');
+---
+<BaseLayout lang={lang} routeKey="projects" title={t(ui, 'projects_page_title')}>
+  <PageIntro eyebrow={t(ui, 'research_funding')} title={t(ui, 'projects_page_title')} description={t(ui, 'projects_page_desc')} />
+  <section class="container content-block"><div class="grid-cards two-cols">{projects.map((row) => <article class="card-surface project-card"><p class="meta-label">{row.scope} {t(ui, 'scope_project')}</p><h3>{row.title}</h3><p><span>{t(ui, 'reference')}</span>{row.reference}</p><p><span>{t(ui, 'entity')}</span>{row.entity}</p><p><span>{t(ui, 'principal_investigators')}</span><span class="inline-rich-text" set:html={row.ips}></span></p><p><span>{t(ui, 'period')}</span>{row.date_ini} — {row.date_end}</p><p><span>{t(ui, 'funding')}</span>{row.money} €</p><p><span>{t(ui, 'role')}</span>{row.rol}</p><p><span>{t(ui, 'status')}</span>{row.status}</p></article>)}</div></section>
+</BaseLayout>

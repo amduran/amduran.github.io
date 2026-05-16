@@ -1,0 +1,13 @@
+{
+  "idx": 4,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, J.C. Fernández, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Detection and prediction of segments containing extreme significant wave heights",
+  "journal": "Ocean Engineering",
+  "volume": 142,
+  "year": 2017,
+  "pages": "268 - 279",
+  "impact": "JCR(2017): 2.214 Position: 2/14 (Q1) Category: ENGINEERING, MARINE",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S0029801817303773?via%3Dihub",
+  "abstract": "This paper presents a methodology for the detection and prediction of Segments containing very high Significant Wave Height (SSWH) values in oceans. This kind of prediction is needed in order to account for potential changes in a long-term future operational environment of marine and coastal structures. The methodology firstly characterizes the wave height time series by approximating it using a sequence of labeled segments, and then a binary classifier is trained to predict the occurrence of SSWH periods based on past height values. A genetic algorithm (GA) combined with a likelihood-based local search is proposed for the first stage (detection), and the second stage (prediction) is tackled by an Artificial Neural Network (ANN) trained with a Multiobjective Evolutionary Algorithm (MOEA). Given the unbalanced nature of the dataset (SSWH are rarer than non SSWH), the MOEA is specifically designed to obtain a balance between global accuracy and individual sensitivities for both classes. The results obtained show that the GA is able to group SSWH in a specific cluster of segments and that the MOEA obtains ANN models able to perform an acceptable prediction of these SSWH.",
+  "citation": "@article{duran2017detection,\r\n  title={Detection and prediction of segments containing extreme significant wave heights},\r\n  author={Dur{\\'a}n-Rosal, AM and Fern{\\'a}ndez, JC and Guti{\\'e}rrez, PA and Herv{\\'a}s-Mart{\\'\\i}nez, C},\r\n  journal={Ocean Engineering},\r\n  volume={142},\r\n  pages={268--279},\r\n  year={2017},\r\n  publisher={Elsevier}\r\n}\r\n"
+}

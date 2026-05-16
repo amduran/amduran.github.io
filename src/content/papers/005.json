@@ -1,0 +1,13 @@
+{
+  "idx": 5,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, M. de la Paz Marín, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Identifying market behaviours using European Stock Index time series by a hybrid segmentation algorithm",
+  "journal": "Neural Processing Letters",
+  "volume": 46,
+  "year": 2017,
+  "pages": "767 - 790",
+  "impact": "JCR(2017): 1.787 Position: 63/132 (Q2) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://link.springer.com/article/10.1007%2Fs11063-017-9592-8",
+  "abstract": "The discovery of useful patterns embodied in a time series is of fundamental relevance in many real applications. Repetitive structures and common type of segments can also provide very useful information of patterns in financial time series. In this paper, we introduce a time series segmentation and characterization methodology combining a hybrid genetic algorithm and a clustering technique to automatically group common patterns from this kind of financial time series and address the problem of identifying stock market prices trends. This hybrid genetic algorithm includes a local search method aimed to improve the quality of the final solution. The local search algorithm is based on maximizing a likelihood ratio, assuming normality for the series and the subseries in which the original one is segmented. To do so, we select two stock market index time series: IBEX35 Spanish index (closing prices) and a weighted average time series of the IBEX35 (Spanish), BEL20 (Belgian), CAC40 (French) and DAX (German) indexes. These are processed to obtain segments that are mapped into a five dimensional space composed of five statistical measures, with the purpose of grouping them according to their statistical properties. Experimental results show that it is possible to discover homogeneous patterns in both time series.",
+  "citation": "@article{duran2017identifying,\r\n  title={Identifying market behaviours using european stock index time series by a hybrid segmentation algorithm},\r\n  author={Dur{\\'a}n-Rosal, Antonio M and de la Paz-Marin, Monica and Gutierrez, Pedro A and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  journal={Neural Processing Letters},\r\n  volume={46},\r\n  number={3},\r\n  pages={767--790},\r\n  year={2017},\r\n  publisher={Springer}\r\n}\r\n"
+}

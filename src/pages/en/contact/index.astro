@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+import { getSite, getUi } from '../../../lib/content';
+import { t } from '../../../lib/utils';
+const lang = 'en';
+const site = await getSite();
+const ui = await getUi(lang);
+const subject = lang === 'en' ? 'Academic contact' : 'Contacto académico';
+---
+<BaseLayout lang={lang} routeKey="contact" title={t(ui, 'contact_page_title')}>
+  <PageIntro eyebrow={t(ui, 'contact')} title={t(ui, 'contact_page_title')} description={t(ui, 'contact_page_desc')} />
+  <section class="container contact-grid content-block">
+    <div class="card-surface contact-panel"><h2>{t(ui, 'contact_details')}</h2><div class="contact-list contact-large"><p><i class="fas fa-envelope"></i> <a href={`mailto:${site.email}`}>{site.email}</a></p><p><i class="fas fa-location-dot"></i> {site.location}</p><p><i class="fas fa-phone"></i> {site.phone}</p></div><div id="map" class="map"></div></div>
+    <div class="card-surface contact-panel"><h2>{t(ui, 'send_message')}</h2><form action={`mailto:${site.email}?subject=${encodeURIComponent(subject)}`} method="get" enctype="text/plain" class="contact-form"><div class="field"><label for="name">{t(ui, 'name')}</label><input type="text" name="name" id="name" class="name" placeholder={t(ui, 'your_name')} /></div><div class="field"><label for="email">{t(ui, 'email')}</label><input type="email" name="email" id="email" class="email" placeholder={t(ui, 'your_email')} /></div><div class="field"><label for="subject">{t(ui, 'subject_label')}</label><input type="text" name="subject" id="subject" class="subject" placeholder={t(ui, 'subject_placeholder')} /></div><div class="field"><label for="message">{t(ui, 'message')}</label><textarea name="body" id="message" class="message" placeholder={t(ui, 'message_placeholder')}></textarea></div><input type="submit" id="submit" name="submit" class="button-primary submit-button" value={t(ui, 'send')} /></form></div>
+  </section>
+</BaseLayout>

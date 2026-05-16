@@ -1,0 +1,13 @@
+{
+  "idx": 10,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, S. Salcedo-Sanz and C. Hervás-Martínez",
+  "title": "An Empirical Validation of a New Memetic CRO Algorithm for the Approximation of Time Series",
+  "congress": "Proceedings of the 2018 Conference of the Spanish Association for Artificial Intelligence (CAEPIA2018)",
+  "date": "23rd-28th September",
+  "year": 2018,
+  "city": "Granada (Spain)",
+  "pages": "209-218",
+  "url": "https://link.springer.com/chapter/10.1007%2F978-3-030-00374-6_20",
+  "abstract": "The exponential increase of available temporal data encourages the development of new automatic techniques to reduce the number of points of time series. In this paper, we propose a novel modification of the coral reefs optimization algorithm (CRO) to reduce the size of the time series with the minimum error of approximation. During the evolution, the solutions are locally optimised and reintroduced in the optimization process. The hybridization is performed using two well-known state-of-the-art algorithms, namely Bottom-Up and Top-Down. The resulting algorithm, called memetic CRO (MCRO), is compared against standard CRO, its statistically driven version (SCRO) and their hybrid versions (HCRO and HSCRO, respectively). The methodology is tested in 15 time series collected from different sources, including financial problems, oceanography data, and cardiology signals, among others, showing that the best results are obtained by MCRO.",
+  "citation": "@inproceedings{duran2018empirical,\r\n  title={An empirical validation of a new memetic CRO algorithm for the approximation of time series},\r\n  author={Dur{\\'a}n-Rosal, Antonio Manuel and Guti{\\'e}rrez, Pedro Antonio and Salcedo-Sanz, Sancho and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  booktitle={Conference of the Spanish Association for Artificial Intelligence},\r\n  pages={209--218},\r\n  year={2018},\r\n  organization={Springer}\r\n}\r\n"
+}

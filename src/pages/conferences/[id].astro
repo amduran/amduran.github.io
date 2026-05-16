@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getUi, collectionData } from '../../lib/content';
+import { route } from '../../lib/routes';
+import { t, authorsHtml } from '../../lib/utils';
+
+export async function getStaticPaths() {
+  const conferences = await collectionData('conferences');
+  return conferences.map((row) => ({ params: { id: String(row.idx) }, props: { row } }));
+}
+
+const lang = 'es';
+const { row } = Astro.props;
+const ui = await getUi(lang);
+---
+<BaseLayout lang={lang} routeKey="conference" routeId={row.idx} title={row.title}>
+  <div class="container detail-shell">
+    <article class="card-surface detail-card">
+      <div class="detail-header-row"><p class="meta-label">{t(ui, 'conference_paper')}</p><span class="quartile-badge is-none">{t(ui, 'without_quartile')}</span></div>
+      <h1 class="page-title detail-title">{row.title}</h1>
+      <div class="detail-meta-grid">
+        <p><span>{t(ui, 'authors')}</span><span set:html={authorsHtml(row.authors)}></span></p>
+        <p><span>{t(ui, 'conference')}</span>{row.congress}</p>
+        <p><span>{t(ui, 'city')}</span>{row.city}</p>
+        <p><span>{t(ui, 'date_label')}</span>{row.date}</p>
+        <p><span>{t(ui, 'year')}</span>{row.year}</p>
+        <p><span>{t(ui, 'pages')}</span>{row.pages}</p>
+      </div>
+      {row.url && <div class="resource-pill-row"><a class="inline-button" href={row.url} target="_blank" rel="noopener noreferrer">{t(ui, 'open_conference_source')}</a></div>}
+      {row.abstract && <section class="detail-section"><h2>{t(ui, 'abstract')}</h2><p set:html={row.abstract}></p></section>}
+      {row.citation && <section class="detail-section" id="citation-block"><h2>{t(ui, 'citation')}</h2><pre class="citation-block"><code>{row.citation}</code></pre></section>}
+    </article>
+    <p class="detail-back"><a class="text-link" href={route(lang, 'publications')}>← {t(ui, 'publications')}</a></p>
+  </div>
+</BaseLayout>

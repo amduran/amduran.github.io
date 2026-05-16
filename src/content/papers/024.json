@@ -1,0 +1,13 @@
+{
+  "idx": 24,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, T. Ashley, J. Pérez-Rodríguez and F. Fernández-Navarro",
+  "title": "Global and Diverse Ensemble model for regression",
+  "journal": "Neurocomputing",
+  "volume": 647,
+  "year": 2025,
+  "pages": "130520",
+  "impact": "JCR(2024): 6.5 Position: 37/204 (Q1) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://www.sciencedirect.com/science/article/pii/S0925231225011920",
+  "abstract": "Diversity is a fundamental component in ensemble methods, crucial for enhancing the overall performance and robustness of predictive models. In bagging and boosting, diversity is implicitly generated through the data sampling process. In stacking, diversity is introduced by incorporating heterogeneous machine learning models as base learners, and an error function is created to focus on minimizing the meta-learner’s overall errors. Some models promote diversity directly within the error function; however, they often prioritize generating competitive and diverse individual learners, neglecting the necessity of creating an ensemble that is collectively accurate, as seen in stacking, whilst ensuring diversity among its members. Motivated by this point, two ensemble models are proposed in this manuscript, named Global and Diverse Ensemble Methods. These models incorporate implicit diversity through data, diversity in the heterogeneity of base learners, and an error function designed to produce a competitive overall ensemble with diverse individuals. The two diversity proposals included in the models are negative correlation and squared Pearson correlation. In both cases, the error function incorporates the minimization of the ensemble’s overall error (global error measure) in addition to promoting diversity. The proposed methods have been rigorously tested on 45 publicly available regression datasets using shallow base learners, as well as on 7 additional datasets using deep base learners, yielding very promising results. These findings underscore the importance of integrating these diversity-promoting elements and minimizing the global errors of the ensemble, rather than focusing solely on the errors of individual base learners, in the design of ensemble methods.",
+  "citation": "@article{duran2025global,\r\n  title={Global and Diverse Ensemble model for regression},\r\n  author={Dur{\\'a}n-Rosal, Antonio M and Ashley, Thomas and P{\\'e}rez-Rodr{\\'\\i}guez, Javier and Fern{\\'a}ndez-Navarro, Francisco},\r\n  journal={Neurocomputing},\r\n  pages={130520},\r\n  year={2025},\r\n  publisher={Elsevier}\r\n}"
+}

@@ -1,0 +1,13 @@
+{
+  "idx": 8,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, F.J. Martínez-Estudillo and C. Hervás-Martínez",
+  "title": "Multiobjective time series segmentation by improving clustering quality and reducing approximation error",
+  "congress": "Proceeding of the Metaheuristics International Conference (MIC 2017) and the XII Metaheurísticas, Algoritmos Evolutivos y Bioinspirados (MAEB 2017) Conference",
+  "date": "4th-7th June",
+  "year": 2017,
+  "city": "Barcelona (Spain)",
+  "pages": "920 - 922",
+  "url": "https://easychair.org/smart-program/MIC%272017/2017-07-05.html",
+  "abstract": "Time series segmentation is aimed at representing a time series by using a set of segments. Some researchers perform segmentation by approximating each segment with a simple model (e.g. a linear interpolation), while others focus their efforts on obtaining homogeneous groups of segments, so that common patterns or behaviours can be detected. The main hypothesis of this paper is that both objectives are conflicting, so time series segmentation is proposed to be tackled from a multiobjective perspective, where both objectives are simultaneously considered, and the expert can choose the desired solution from a Pareto Front of different segmentations. A specific multiobjective evolutionary algorithm is designed for the purpose of deciding the cut points of the segments, integrating a clustering algorithm for fitness evaluation. The experimental validation of the methodology includes one synthetic time series and four datasets from real-world problems. Nine clustering quality assessment metrics are experimentally compared to decide the most suitable one for the algorithm. The proposed algorithm shows good performance for both clustering quality and reconstruction error, improving the results of other mono-objective alternatives of the state-of-the-art and showing better results than a simple weighted linear combination of both corresponding fitness functions.",
+  "citation": "@article{duran2017multiobjective,\r\n  title={Multiobjective time series segmentation by improving clustering quality and reducing approximation error},\r\n  author={Duran Rosal, Antonio Manuel and Guti{\\'e}rrez Pe{\\~n}a, Pedro Antonio and Mart{\\'\\i}nez Estudillo, Francisco Jos{\\'e} and Hervas Mart{\\'\\i}nez, C{\\'e}sar and others},\r\n  year={2017}\r\n}\r\n"
+}

@@ -1,0 +1,32 @@
+---
+import { t } from '../lib/utils';
+const { site, ui } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-title">{site.name}</p>
+      <p class="footer-copy">Profesor e investigador en Métodos Cuantitativos, centrado en aprendizaje automático, minería de series temporales, predicción y segmentación.</p>
+    </div>
+    <div>
+      <p class="footer-title">Enlaces académicos</p>
+      <div class="footer-links">
+        {site.academic_links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>)}
+        <a href={`/${site.cv}`} target="_blank" rel="noopener noreferrer">{t(ui, 'curriculum_vitae')}</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-title">{t(ui, 'contact')}</p>
+      <div class="contact-list">
+        <p><i class="fas fa-location-dot"></i> {site.address}</p>
+        <p><i class="fas fa-envelope"></i> <a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p><i class="fas fa-phone"></i> {site.phone}</p>
+      </div>
+      <div class="social-networks" aria-label="Social links">
+        {site.social_links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer"><i class={link.icon}></i></a>)}
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© {site.name} · <span data-bind="footer-year">{year}</span></div>
+</footer>

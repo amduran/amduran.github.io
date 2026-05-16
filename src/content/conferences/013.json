@@ -1,0 +1,13 @@
+{
+  "idx": 13,
+  "authors": "D. Guijo-Rubio, <span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, A. Troncoso y C. Hervás-Martínez",
+  "title": "Time series clustering based on the characterisation of segment typologies",
+  "congress": "Proceedings of Third Bilbao Data Science Workshop (BiDAS 3)",
+  "date": "8th-9th November",
+  "year": 2018,
+  "city": "Bilbao (Spain)",
+  "pages": "1",
+  "url": "https://www.uco.es/grupos/ayrna/index.php/es",
+  "abstract": "Time series clustering is the process of grouping time series with respect to their similarity or characteristics. Previous approaches usually combine a specific distance measure for time series and a standard clustering method. However, these approaches do not take the similarity of the different subsequences of each time series into account, which can be used to better compare the time series objects of the dataset. In this paper, we propose a novel technique of time series clustering based on two clustering stages. In a first step, a least squares polynomial segmentation procedure is applied to each time series, which is based on a growing window technique that returns different-length segments. Then, all the segments are projected into same dimensional space, based on the coefficients of the model that approximates the segment and a set of statistical features. After mapping, a first hierarchical clustering phase is applied to all mapped segments, returning groups of segments for each time series. These clusters are used to represent all time series in the same dimensional space, after defining another specific mapping process. In a second and final clustering stage, all the time series objects are grouped. We consider internal clustering quality to automatically adjust the main parameter of the algorithm, which is an error threshold for the segmentation. The results obtained on 84 datasets from the UCR Time Series Classification Archive have been compared against two state-of-the-art methods, showing that the performance of this methodology is very promising.",
+  "citation": "@InProceedings{D.Guijo-Rubio2018,\r\n  author    = {D. Guijo-Rubio, A.M. Durán-Rosal, P.A. Gutiérrez, A. Troncoso and C. Hervás-Martínez},\r\n  title     = {Time series clustering based on the characterisation of segment typologies},\r\n  booktitle = {Proceedings of Third Bilbao Data Science Workshop (BiDAS 3)},\r\n  year      = {2018},\r\n}"
+}

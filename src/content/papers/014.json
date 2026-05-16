@@ -1,0 +1,13 @@
+{
+  "idx": 14,
+  "authors": "D. Guijo-Rubio, <span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, A. Troncoso and C. Hervás-Martínez",
+  "title": "Time series clustering based on the characterisation of segment typologies",
+  "journal": "IEEE Transactions on Cybernetics",
+  "volume": 51,
+  "year": 2021,
+  "pages": "5409-5422",
+  "impact": "JCR(2021): 19.118 Position: 3/144 (Q1) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://ieeexplore.ieee.org/document/8960542",
+  "abstract": "Time-series clustering is the process of grouping time series with respect to their similarity or characteristics. Previous approaches usually combine a specific distance measure for time series and a standard clustering method. However, these approaches do not take the similarity of the different subsequences of each time series into account, which can be used to better compare the time-series objects of the dataset. In this article, we propose a novel technique of time-series clustering consisting of two clustering stages. In a first step, a least-squares polynomial segmentation procedure is applied to each time series, which is based on a growing window technique that returns different-length segments. Then, all of the segments are projected into the same dimensional space, based on the coefficients of the model that approximates the segment and a set of statistical features. After mapping, a first hierarchical clustering phase is applied to all mapped segments, returning groups of segments for each time series. These clusters are used to represent all time series in the same dimensional space, after defining another specific mapping process. In a second and final clustering stage, all the time-series objects are grouped. We consider internal clustering quality to automatically adjust the main parameter of the algorithm, which is an error threshold for the segmentation. The results obtained on 84 datasets from the UCR Time Series Classification Archive have been compared against three state-of-the-art methods, showing that the performance of this methodology is very promising, especially on larger datasets.",
+  "citation": "@article{guijo2020time,\r\n  title={Time-series clustering based on the characterization of segment typologies},\r\n  author={Guijo-Rubio, David and Dur{\\'a}n-Rosal, Antonio Manuel and Guti{\\'e}rrez, Pedro Antonio and Troncoso, Alicia and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  journal={IEEE transactions on cybernetics},\r\n  year={2020},\r\n  publisher={IEEE}\r\n}\r\n"
+}

@@ -1,0 +1,13 @@
+{
+  "idx": 1,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, M. de la Paz Marín, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Applying a Hybrid Algorithm to the Segmentation of the Spanish Stock Market Index Time Series",
+  "congress": "13th International Work-Conference on Artificial Neural Networks (IWANN 2015)",
+  "date": "10th-12th June",
+  "year": 2015,
+  "city": "Palma de Mallorca (Spain)",
+  "pages": "69-79",
+  "url": "https://link.springer.com/chapter/10.1007%2F978-3-319-19222-2_6",
+  "abstract": "Time-series segmentation can be approached by combining a clustering technique and genetic algorithm (GA) with the purpose of automatically finding segments and patterns of a time series. This is an interesting data mining field, but its application to the optimal segmentation of financial time series is a very challenging task, so accurate algorithms are needed. In this sense, GAs are relatively poor at finding the precise optimum solution in the region where the algorithm converges. Thus, this work presents a hybrid GA algorithm including a local search method, aimed to improve the quality of the final solution. The local search algorithm is based on maximizing a likelihood ratio, assuming normality for the series and the subseries in which the original one is segmented. A real-world time series in the Spanish Stock Market field was used to test this methodology.",
+  "citation": "@inproceedings{duran2015applying,\r\n  title={Applying a hybrid algorithm to the segmentation of the Spanish stock market index time series},\r\n  author={Dur{\\'a}n-Rosal, Antonio Manuel and de la Paz-Mar{\\'\\i}n, M{\\'o}nica and Guti{\\'e}rrez, Pedro Antonio and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  booktitle={International Work-Conference on Artificial Neural Networks},\r\n  pages={69--79},\r\n  year={2015},\r\n  organization={Springer}\r\n}\r\n"
+}

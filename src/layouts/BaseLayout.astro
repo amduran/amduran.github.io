@@ -1,0 +1,52 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getSite, getUi } from '../lib/content';
+import { route, legacyPageClass } from '../lib/routes';
+import { t } from '../lib/utils';
+
+const {
+  lang = 'es',
+  routeKey = 'home',
+  routeId = undefined,
+  title = undefined,
+  description = undefined,
+} = Astro.props;
+
+const site = await getSite();
+const ui = await getUi(lang);
+const pageTitle = title ? `${title} · ${site.name}` : site.name;
+const metaDescription = description || 'Academic profile of Antonio M. Durán-Rosal: publications, teaching, research projects, awards and contact information.';
+const pageClass = legacyPageClass(routeKey);
+const alternateLang = lang === 'en' ? 'es' : 'en';
+const alternateHref = route(alternateLang, routeKey, routeId);
+---
+<!doctype html>
+<html lang={lang} dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={metaDescription} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link rel="shortcut icon" href="/img/favicon.png" />
+    <script src="https://kit.fontawesome.com/00154b0b1a.js" crossorigin="anonymous"></script>
+    <title>{pageTitle}</title>
+    <script is:inline>(function(){try{var savedTheme=localStorage.getItem('site-theme');if(savedTheme==='dark'||savedTheme==='light'){document.documentElement.setAttribute('data-theme',savedTheme);}}catch(e){}})();</script>
+  </head>
+  <body class={pageClass} data-page={routeKey} data-lang={lang}>
+    <a class="skip-link" href="#main-content">{lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}</a>
+    <Header site={site} ui={ui} lang={lang} routeKey={routeKey} routeId={routeId} alternateHref={alternateHref} />
+    <main id="main-content" class="section-space">
+      <slot />
+    </main>
+    <Footer site={site} ui={ui} />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="/js/scripts.js" charset="utf-8"></script>
+  </body>
+</html>

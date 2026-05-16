@@ -1,0 +1,37 @@
+---
+import { route } from '../lib/routes';
+import { t, authorsHtml, stripHtml, extractQuartile, quartileBadgeClass, resourceLinks } from '../lib/utils';
+const { row, ui, lang } = Astro.props;
+const isJournal = row.kind === 'journal';
+const q = isJournal ? extractQuartile(row.impact) : 'none';
+const details = route(lang, isJournal ? 'publication' : 'conference', row.idx);
+const search = `${row.title || ''} ${stripHtml(row.authors || '')} ${row.venue || ''} ${row.impact || ''} ${row.city || ''}`.toLowerCase();
+const links = isJournal ? resourceLinks(row, ui) : [];
+---
+<article class="card-surface publication-row filterable-item" data-type={isJournal ? 'journal' : 'conference'} data-year={row.year} data-quartile={q} data-impact-rank={q} data-title={String(row.title || '').toLowerCase()} data-search={search}>
+  <div class="publication-row-main">
+    <div class="publication-kicker-row">
+      <p class="meta-label">{isJournal ? t(ui, 'journal_article') : t(ui, 'conference_paper')} · {row.year}</p>
+      <div class="publication-tags">
+        {isJournal && q !== 'none' ? <span class:list={["quartile-badge", quartileBadgeClass(q)]}>{q}</span> : <span class="quartile-badge is-none">{t(ui, 'without_quartile')}</span>}
+      </div>
+    </div>
+    <h3><a href={details}>{row.title}</a></h3>
+    <p class="publication-authors" set:html={authorsHtml(row.authors)}></p>
+    {isJournal ? (
+      <>
+        <p class="publication-venue">{row.journal} · Vol. {row.volume} · {row.pages}</p>
+        {row.impact && <p class="publication-impact">{row.impact}</p>}
+        <div class="resource-pill-row">
+          {links.map((link) => <a class:list={["resource-pill", link.className]} href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>{link.label}</a>)}
+        </div>
+      </>
+    ) : (
+      <>
+        <p class="publication-venue">{row.congress} · {row.city} · {row.date}</p>
+        <p class="publication-impact">{t(ui, 'pages')}: {row.pages}</p>
+      </>
+    )}
+  </div>
+  <a class="inline-button" href={details}>{t(ui, 'details')}</a>
+</article>

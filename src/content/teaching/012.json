@@ -1,0 +1,12 @@
+{
+  "idx": 12,
+  "academic_year": "2020/2021",
+  "subject": "Programación Avanzada",
+  "degree": "Ing. Informática y Tecnologías Virtuales",
+  "course": 2,
+  "entity": "Universidad Loyola Andalucía",
+  "type": "Theory",
+  "hours": 60,
+  "ects": 6,
+  "current": 0
+}

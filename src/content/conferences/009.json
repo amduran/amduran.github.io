@@ -1,0 +1,13 @@
+{
+  "idx": 9,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, D. Guijo-Rubio, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Hybrid Weighted Barebones Exploiting Particle Swarm Optimization Algorithm for Time Series Representation",
+  "congress": "Bioinspired Optimization Methods and their Applications (BIOMA2018)",
+  "date": "16th-18th May",
+  "year": 2018,
+  "city": "Paris (France)",
+  "pages": "126 - 137",
+  "url": "https://link.springer.com/chapter/10.1007%2F978-3-319-91641-5_11",
+  "abstract": "The amount of data available in time series is recently increasing in an exponential way, making difficult time series preprocessing and analysis. This paper adapts different methods for time series representation, which are based on time series segmentation. Specifically, we consider a particle swarm optimization algorithm (PSO) and its barebones exploitation version (BBePSO). Moreover, a new variant of the BBePSO algorithm is proposed, which takes into account the positions of the particles throughout the generations, where those close in time are given more importance. This methodology is referred to as weighted BBePSO (WBBePSO). The solutions obtained by all the algorithms are finally hybridised with a local search algorithm, combining simple segmentation strategies (Top-Down and Bottom-Up). WBBePSO is tested in 13 time series and compared against the rest of algorithms, showing that it leads to the best results and obtains consistent representations.",
+  "citation": "@inproceedings{duran2018hybrid,\r\n  title={Hybrid Weighted Barebones Exploiting Particle Swarm Optimization Algorithm for Time Series Representation},\r\n  author={Dur{\\'a}n-Rosal, Antonio Manuel and Guijo-Rubio, David and Guti{\\'e}rrez, Pedro Antonio and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  booktitle={International Conference on Bioinspired Methods and Their Applications},\r\n  pages={126--137},\r\n  year={2018},\r\n  organization={Springer}\r\n}"
+}

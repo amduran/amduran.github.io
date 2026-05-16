@@ -1,0 +1,13 @@
+{
+  "idx": 11,
+  "authors": "D. Guijo-Rubio, <span class=\"bold\">A.M. Durán-Rosal</span>, A. Gómez-Orellana, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Distribution-Based Discretisation and Ordinal Classification Applied to Wave Height Prediction",
+  "congress": "Proceedings of the 2018 International Conference on Intelligent Data Engineering and Automated Learning (IDEAL2018)",
+  "date": " 21st-23rd November",
+  "year": 2018,
+  "city": "Madrid (Spain)",
+  "pages": "171 - 179",
+  "url": "https://link.springer.com/chapter/10.1007%2F978-3-030-03496-2_20",
+  "abstract": "Wave height prediction is an important task for ocean and marine resource management. Traditionally, regression techniques are used for this prediction, but estimating continuous changes in the corresponding time series can be very difficult. With the purpose of simplifying the prediction, wave height can be discretised in consecutive intervals, resulting in a set of ordinal categories. Despite this discretisation could be performed using the criterion of an expert, the prediction could be biased to the opinion of the expert, and the obtained categories could be unrepresentative of the data recorded. In this paper, we propose a novel automated method to categorise the wave height based on selecting the most appropriate distribution from a set of well-suited candidates. Moreover, given that the categories resulting from the discretisation show a clear natural order, we propose to use different ordinal classifiers instead of nominal ones. The methodology is tested in real wave height data collected from two buoys located in the Gulf of Alaska and South Kodiak. We also incorporate reanalysis data in order to increase the accuracy of the predictors. The results confirm that this kind of discretisation is suitable for the time series considered and that the ordinal classifiers achieve outstanding results in comparison with nominal techniques.",
+  "citation": "@inproceedings{guijo2018distribution,\r\n  title={Distribution-based discretisation and ordinal classification applied to wave height prediction},\r\n  author={Guijo-Rubio, David and Dur{\\'a}n-Rosal, Antonio M and G{\\'o}mez-Orellana, Antonio M and Guti{\\'e}rrez, Pedro A and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  booktitle={International Conference on Intelligent Data Engineering and Automated Learning},\r\n  pages={171--179},\r\n  year={2018},\r\n  organization={Springer}\r\n}"
+}

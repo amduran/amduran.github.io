@@ -1,0 +1,122 @@
+{
+  "idx": 3,
+  "label": {
+    "es": "Difusión de investigación",
+    "en": "Research broadcasting"
+  },
+  "items": [
+    {
+      "title": {
+        "es": "Premio Sociedad Científica Informática de España · Fundación BBVA",
+        "en": "Award Sociedad Científica España · Fundación BBVA"
+      },
+      "links": [
+        {
+          "label": {
+            "es": "Web principal",
+            "en": "Main website"
+          },
+          "url": "https://www.fbbva.es/premios/premios-investigacion-sociedad-cientifica-informatica-espana-fundacion-bbva-2020/"
+        },
+        {
+          "label": {
+            "es": "Perfil",
+            "en": "Profile"
+          },
+          "url": "https://www.fbbva.es/galardonados/antonio-manuel-duran/"
+        },
+        {
+          "label": {
+            "es": "Entrevista Fundación BBVA",
+            "en": "Fundación BBVA interview"
+          },
+          "url": "https://www.youtube.com/watch?v=ItkCObpM2pg"
+        },
+        {
+          "label": {
+            "es": "Entrevista PTV",
+            "en": "PTV interview"
+          },
+          "url": "https://www.youtube.com/watch?v=torERDcgSHM"
+        },
+        {
+          "label": {
+            "es": "Discurso de agradecimiento",
+            "en": "Speech of gratitude"
+          },
+          "url": "https://www.youtube.com/watch?v=sl_aa2d3DIU"
+        },
+        {
+          "label": {
+            "es": "Cordópolis 2020",
+            "en": "Cordópolis 2020"
+          },
+          "url": "https://cordopolis.eldiario.es/cordoba-hoy/fundacion-bbva-premia-investigador-uco-trayectoria-campo-informatica_1_7076566.html"
+        },
+        {
+          "label": {
+            "es": "Europa Press 2020",
+            "en": "Europa Press 2020"
+          },
+          "url": "https://www.europapress.es/andalucia/noticia-fundacion-bbva-premia-investigador-universidad-cordoba-trayectoria-campo-informatica-20200604184645.html"
+        },
+        {
+          "label": {
+            "es": "Córdoba Buenas Noticias 2020",
+            "en": "Córdoba Buenas Noticias 2020"
+          },
+          "url": "https://www.cordobabn.com/articulo/educacion/antonio-manuel-duran-investigador-uco-premiado-trayectoria/20200605222411048443.html"
+        },
+        {
+          "label": {
+            "es": "Universidad de Córdoba 2020",
+            "en": "University of Córdoba 2020"
+          },
+          "url": "https://www.uco.es/ucci/es/noticias-gen/item/3009-la-fundacion-bbva-premia-a-un-joven-investigador-de-la-uco-por-su-trayectoria-en-el-campo-de-la-informatica"
+        },
+        {
+          "label": {
+            "es": "Europa Press 2021",
+            "en": "Europa Press 2021"
+          },
+          "url": "https://www.europapress.es/andalucia/noticia-investigador-loyola-antonio-manuel-duran-premio-trayectoria-jovenes-investigadores-fundacion-bbva-20211119130150.html"
+        },
+        {
+          "label": {
+            "es": "ABC 2021",
+            "en": "ABC 2021"
+          },
+          "url": "https://www.abc.es/sociedad/abci-fundacion-bbva-y-scie-entregan-premios-informatica-202111191932_noticia.html"
+        },
+        {
+          "label": {
+            "es": "ABC Sevilla 2021",
+            "en": "ABC Sevilla 2021"
+          },
+          "url": "https://sevilla.abc.es/andalucia/cordoba/sevi-investigador-universidad-loyola-antonio-manuel-duran-premio-nacional-informatica-2021-202111191355_noticia.html"
+        },
+        {
+          "label": {
+            "es": "Religión Digital 2021",
+            "en": "Religión Digital 2021"
+          },
+          "url": "https://www.religiondigital.org/educacion/Universidad-Loyola-Antonio-Fundacion-BBVA_0_2397660234.html"
+        },
+        {
+          "label": {
+            "es": "La Voz de Córdoba 2021",
+            "en": "La Voz de Córdoba 2021"
+          },
+          "url": "https://www.lavozdecordoba.es/ocio-y-sociedad/2021/11/20/loyola-21/"
+        },
+        {
+          "label": {
+            "es": "Universidad Loyola 2021",
+            "en": "Universidad Loyola 2021"
+          },
+          "url": "https://www.uloyola.es/blog/investigacion/el-investigador-de-la-universidad-loyola-antonio-manuel-duran-recibe-el-premio-a-la-trayectoria-de-jovenes-investigadores-de-la-fundacion-bbva"
+        }
+      ]
+    }
+  ]
+}

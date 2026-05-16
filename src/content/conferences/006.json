@@ -1,0 +1,13 @@
+{
+  "idx": 6,
+  "authors": "D. Guijo-Rubio, <span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez and C. Hervás-Martínez",
+  "title": "Clustering de Series Temporales basado en la Extracción de Tipologías de Segmentos",
+  "congress": "Actas del I Congreso de Investigadores Noveles de la Universidad de Córdoba",
+  "date": "11th November",
+  "year": 2016,
+  "city": "Córdoba (Spain)",
+  "pages": "201 - 204",
+  "url": "https://uco.edu.es/grupos/ayrna/index.php/es",
+  "abstract": "Durante los últimos años se ha producido un gran aumento de series de datos distribuidas a lo largo del tiempo, o lo que es lo mismo, de series temporales. Este crecimiento ha traído consigo un interés en su agrupamiento o clustering, proceso de agrupar las series de forma que, las series de un mismo grupo sean muy similares entre sí y muy diferentes a las de otros grupos. Cuando las series temporales son muy largas, presentan ruido o valores perdidos, muchos de los métodos actuales obtienen soluciones que no son aceptables. En este artículo se presenta un nuevo método de clustering para series temporales, mediante polinomios utilizando un método conocido como Growing Window. De esta forma simplificamos la serie a un conjunto de coeficientes lineales de grado variable, para, posteriormente, agrupar los diferentes segmentos y hallar los centroides de cada cluster. Al final la serie queda simplificada a n x d elementos, siendo n el número de clusters y d el grado del polinomio utilizado en la aproximación y es con esta representación con la que se realiza la agrupación final. El objetivo de esta nueva metodología consiste en disminuir la dimensionalidad de la serie temporal, la sensibilidad del agrupamiento y los datos perdidos.",
+  "citation": "@conference{Guijo-Jovenes-UCO16,\r\nauthor = \"David Guijo-Rubio and Antonio Manuel Dur{\\'a}n-Rosal and Pedro Antonio Guti{\\'e}rrez and C{\\'e}sar Herv{\\'a}s-Mart{\\'i}nez\",\r\nbooktitle = \"Actas del I Congreso de Investigadores Noveles de la Universidad de C{\\'o}rdoba\",\r\nisbn = \"978-84-9927-291-7\",\r\nkeywords = \"Time series clustering, time series segmentation, \",\r\nmonth = \"11th November\",\r\norganization = \"C{\\'o}rdoba, Spain\",\r\npages = \"201-204\",\r\nseries = \"Investigando por un futuro mejor\",\r\ntitle = \"{C}lustering de {S}eries {T}emporales basado en la {E}xtracci{\\'o}n de {T}ipolog{\\'i}as de {S}egmentos\",\r\nyear = \"2016\",\r\n}\r\n\r\n"
+}

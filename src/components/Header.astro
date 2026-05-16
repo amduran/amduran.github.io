@@ -1,0 +1,38 @@
+---
+import { route } from '../lib/routes';
+import { t } from '../lib/utils';
+
+const { site, ui, lang, routeKey, routeId, alternateHref } = Astro.props;
+const nav = [
+  { key: 'home', className: 'index', label: 'home' },
+  { key: 'publications', className: 'ppublications', label: 'publications' },
+  { key: 'teaching', className: 'pteaching', label: 'teaching' },
+  { key: 'projects', className: 'pprojects', label: 'projects' },
+  { key: 'background', className: 'pinformation', label: 'background' },
+  { key: 'outreach', className: 'ppress', label: 'outreach' },
+  { key: 'contact', className: 'pcontact', label: 'contact' },
+];
+---
+<header class="site-header">
+  <div class="container nav-shell nav-shell-top">
+    <a class="brand" href={route(lang, 'home')} aria-label="Go to homepage">
+      <span class="brand-mark">{site.brand}</span>
+      <span class="brand-text"><strong>{site.name}</strong><small>{t(ui, 'site_tagline')}</small></span>
+    </a>
+    <div class="utility-actions" aria-label="Site preferences">
+      <div class="lang-switch" aria-label={t(ui, 'lang_label')}>
+        <a data-lang-switch class:list={["lang-pill", lang === 'es' && 'is-current']} href={lang === 'es' ? route('es', routeKey, routeId) : alternateHref}>ES</a>
+        <a data-lang-switch class:list={["lang-pill", lang === 'en' && 'is-current']} href={lang === 'en' ? route('en', routeKey, routeId) : alternateHref}>EN</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+  <div class="container nav-shell nav-shell-bottom">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir navegación"><span></span><span></span><span></span></button>
+    <nav class="main-menu" id="main-menu">
+      {nav.map((item) => (
+        <a class:list={[item.className, routeKey === item.key && 'is-active']} href={route(lang, item.key)}>{t(ui, item.label)}</a>
+      ))}
+    </nav>
+  </div>
+</header>

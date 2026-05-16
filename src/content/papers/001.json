@@ -1,0 +1,13 @@
+{
+  "idx": 1,
+  "authors": "A. Nikolaou, P.A. Gutiérrez, <span class=\"bold\">A.M. Durán-Rosal </span>, I. Dicaire, F. Fernandez-Navarro and C. Hervás-Martínez",
+  "title": "Detection of early warning signals in paleoclimate data using a genetic time series segmentation algorithm",
+  "journal": "Climate Dynamics",
+  "volume": 44,
+  "year": 2015,
+  "pages": "1919-1933",
+  "impact": "JCR (2015): 4.708 Position: 8/84 (Q1) Category: METEOROLOGY & ATMOSPHERIC SCIENCES",
+  "url": "https://link.springer.com/article/10.1007%2Fs00382-014-2405-0",
+  "abstract": "This paper proposes a time series segmentation algorithm combining a clustering technique and a genetic algorithm to automatically find segments sharing common statistical characteristics in paleoclimate time series. The segments are transformed into a six-dimensional space composed of six statistical measures, most of which have been previously considered in the detection of warning signals of critical transitions. Experimental results show that the proposed approach applied to paleoclimate data could effectively analyse Dansgaard-Oeschger (DO) events and uncover commonalities and differences in their statistical and possibly their dynamical characterisation. In particular, warning signals were robustly detected in the GISP2 and NGRIP delta18O ice core data for several DO events (e.g. DO 1, 4, 8 and 12) in the form of an order of magnitude increase in variance, autocorrelation and mean square distance from a linear approximation (i.e. the mean square error). The increase in mean square error, suggesting nonlinear behaviour, has been found to correspond with an increase in variance prior to several DO events for - 90 % of the algorithm runs for the GISP2 delta18O dataset and for aprox 100 % of the algorithm runs for the NGRIP delta18O dataset. The proposed approach applied to well-known dynamical systems and paleoclimate datasets provides a novel visualisation tool in the field of climate time series analysis.",
+  "citation": "@article{nikolaou2015detection,\r\n  title={Detection of early warning signals in paleoclimate data using a genetic time series segmentation algorithm},\r\n  author={Nikolaou, Athanasia and Guti{\\'e}rrez, Pedro Antonio and Dur{\\'a}n, Antonio and Dicaire, Isabelle and Fern{\\'a}ndez-Navarro, Francisco and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  journal={Climate Dynamics},\r\n  volume={44},\r\n  number={7},\r\n  pages={1919--1933},\r\n  year={2015},\r\n  publisher={Springer}\r\n}\r\n"
+}

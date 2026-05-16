@@ -1,0 +1,13 @@
+{
+  "idx": 8,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, J.C. Fernández, C. Casanova-Mateo, J. Sanz-Justo, S. Salcedo-Sanz and C. Hervás-Martínez",
+  "title": "Efficient Fog Prediction with Multi-objective Evolutionary Neural Networks",
+  "journal": "Applied Soft Computing",
+  "volume": 70,
+  "year": 2018,
+  "pages": "347 - 358",
+  "impact": "JCR(2018): 4.873 Position: 20/134 (Q1) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S1568494618303107?via%3Dihub",
+  "abstract": "This paper proposes the application of novel artificial neural networks with evolutionary training and different basic functions (sigmoidal, product and radial), for a real problem of fog events classification from meteorological input variables. Specifically, a Multiobjective Evolutionary Algorithm is considered as artificial neural network training mechanism in order to obtain a binary classification model for the detection of fog events at Valladolid airport (Spain). The evolutionary neural models developed are based on two-dimensional performance measures: traditional accuracy and the minimum sensitivity, as the lowest percentage of examples correctly predicted as belonging to each class with respect to the total number of examples in the corresponding class. These performance measures are directly related to features associated with any classifier: its global performance and the rate of the worst classified class. These two objectives are usually in conflict when the optimization process tries to construct models with a high classification rate level in the generalization dataset, and also with a good classification level for each class or minimum sensitivity. A sensitivity analysis of the proposed models is carried out, and thus the subjacent relations between the input variables and the output classification target can be better understood.",
+  "citation": "@article{duran2018efficient,\r\n  title={Efficient fog prediction with multi-objective evolutionary neural networks},\r\n  author={Dur{\\'a}n-Rosal, Antonio Manuel and Fern{\\'a}ndez, Juan Carlos and Casanova-Mateo, Carlos and Sanz-Justo, Julia and Salcedo-Sanz, Sancho and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  journal={Applied Soft Computing},\r\n  volume={70},\r\n  pages={347--358},\r\n  year={2018},\r\n  publisher={Elsevier}\r\n}\r\n"
+}

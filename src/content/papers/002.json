@@ -1,0 +1,13 @@
+{
+  "idx": 2,
+  "authors": "<span class=\"bold\">A.M. Durán-Rosal</span>, C. Hervás-Martínez, A.J. Tallón-Ballesteros, A.C. Martínez-Estudillo and S. Salcedo-Sanz",
+  "title": "Massive missing data reconstruction in ocean buoys with evolutionary product unit neural networks",
+  "journal": "Ocean Engineering",
+  "volume": 117,
+  "year": 2016,
+  "pages": "292 - 301",
+  "impact": "JCR(2016): 1.894 Position: 2/14 (Q1) Category: ENGINEERING, MARINE",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S0029801816300373",
+  "abstract": "In this paper we tackle the problem of massive missing data reconstruction in ocean buoys, with an evolutionary product unit neural network (EPUNN). When considering a large number of buoys to reconstruct missing data, it is sometimes difficult to find a common period of completeness (without missing data on it) in the data to form a proper training and test set. In this paper we solve this issue by using partial reconstruction, which are then used as inputs of the EPUNN, with linear models. Missing data reconstruction in several phases or steps is then proposed. In this work we also show the potential of EPUNN to obtain simple, interpretable models in spite of the non-linear characteristic of the neural network, much simpler than the commonly used sigmoid-based neural systems. In the experimental section of the paper we show the performance of the proposed approach in a real case of massive missing data reconstruction in 6 wave-rider buoys at the Gulf of Alaska.",
+  "citation": "@article{duran2016massive,\r\n  title={Massive missing data reconstruction in ocean buoys with evolutionary product unit neural networks},\r\n  author={Dur{\\'a}n-Rosal, Antonio M and Herv{\\'a}s-Mart{\\'\\i}nez, C and Tall{\\'o}n-Ballesteros, Antonio J and Mart{\\'\\i}nez-Estudillo, AC and Salcedo-Sanz, S},\r\n  journal={Ocean Engineering},\r\n  volume={117},\r\n  pages={292--301},\r\n  year={2016},\r\n  publisher={Elsevier}\r\n}\r\n"
+}

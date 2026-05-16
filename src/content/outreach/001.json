@@ -1,0 +1,46 @@
+{
+  "idx": 1,
+  "label": {
+    "es": "Cursos, seminarios, talleres y código",
+    "en": "Courses, seminars, workshops and code"
+  },
+  "items": [
+    {
+      "title": {
+        "es": "Seminario de introducción a ciencia de datos y aprendizaje automático",
+        "en": "Seminar on Introduction to Data Science and Machine Learning"
+      },
+      "links": [
+        {
+          "label": {
+            "es": "Material del seminario",
+            "en": "Seminar material"
+          },
+          "url": "https://github.com/ayrna/taller-sklearn-asl-2019"
+        },
+        {
+          "label": {
+            "es": "Aula de Software Libre",
+            "en": "Free Software Lab"
+          },
+          "url": "https://www.uco.es/aulasoftwarelibre/2303-seminarios-de-introduccion-a-la-ciencia-de-datos-y-aprendizaje-automatico/"
+        }
+      ]
+    },
+    {
+      "title": {
+        "es": "Repositorio de algoritmos de segmentación de series temporales",
+        "en": "Time Series Segmentation Algorithms repository"
+      },
+      "links": [
+        {
+          "label": {
+            "es": "Código fuente",
+            "en": "Source code"
+          },
+          "url": "https://github.com/ayrna/tssa"
+        }
+      ]
+    }
+  ]
+}

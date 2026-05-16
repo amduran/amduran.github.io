@@ -1,0 +1,13 @@
+{
+  "idx": 9,
+  "authors": "M. Pérez-Ortiz, <span class=\"bold\">A.M. Durán-Rosal</span>, P.A. Gutiérrez, J. Sánchez-Monedero, A. Nikolaou, F. Fernandez-Navarro and C. Hervás-Martínez",
+  "title": "On the use of evolutionary time series analysis for segmenting paleoclimate data",
+  "journal": "Neurocomputing",
+  "volume": 326,
+  "year": 2019,
+  "pages": "3 - 14",
+  "impact": "JCR(2019): 4.438 Position: 28/136 (Q1) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S0925231217315345?via%3Dihub",
+  "abstract": "Recent studies propose that different dynamical systems, such as climate, ecological and financial systems, among others, present critical transition points named to as tipping points (TPs). Climate TPs can severely affect millions of lives on Earth so that an active scientific community is working on finding early warning signals. This paper deals with the development of a time series segmentation algorithm for paleoclimate data in order to find segments sharing common statistical patterns. The proposed algorithm uses a clustering-based approach for evaluating the solutions and six statistical features, most of which have been previously considered in the detection of early warning signals in paleoclimate TPs. Due to the limitations of classical statistical methods, we propose the use of a genetic algorithm to automatically segment the series, together with a method to compare the segmentations. The final segments provided by the algorithm are used to construct a prediction model, whose promising results show the importance of segmentation for improving the understanding of a time series.",
+  "citation": "@article{perez2019use,\r\n  title={On the use of evolutionary time series analysis for segmenting paleoclimate data},\r\n  author={P{\\'e}rez-Ortiz, Mar{\\'\\i}a and Dur{\\'a}n-Rosal, Antonio Manuel and Guti{\\'e}rrez, Pedro Antonio and S{\\'a}nchez-Monedero, Javier and Nikolaou, Athanasia and Fern{\\'a}ndez-Navarro, Francisco and Herv{\\'a}s-Mart{\\'\\i}nez, C{\\'e}sar},\r\n  journal={Neurocomputing},\r\n  volume={326},\r\n  pages={3--14},\r\n  year={2019},\r\n  publisher={Elsevier}\r\n}\r\n"
+}
