@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 const asString = z.preprocess((value) => value == null ? '' : String(value), z.string());
 const asNumber = z.preprocess((value) => Number(value ?? 0), z.number());
-const localizedText = z.union([asString, z.record(asString)]);
+const localizedText = z.union([z.record(asString), asString]);
 const link = z.object({ label: localizedText, url: asString });
 
 const site = defineCollection({
