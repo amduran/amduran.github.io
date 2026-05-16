@@ -21,13 +21,18 @@ const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;
         <p><i class="fas fa-location-dot"></i> {site.location}</p>
         <p><i class="fas fa-phone"></i> {site.phone}</p>
       </div>
-      <iframe
-        class="map"
-        title="Location map for Universidad Loyola"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=-4.8070%2C37.8590%2C-4.7740%2C37.8770&layer=mapnik&marker=37.867727%2C-4.790526"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+      <div class="map-frame">
+        <iframe
+          class="map"
+          title="Location map for Universidad Loyola Andalucía"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-4.8070%2C37.8590%2C-4.7740%2C37.8770&layer=mapnik"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <button class="map-marker" type="button" aria-label="Universidad Loyola Andalucía" title="Universidad Loyola Andalucía">
+          <span class="map-tooltip">Universidad Loyola Andalucía</span>
+        </button>
+      </div>
     </div>
 
     <div class="card-surface contact-panel">
