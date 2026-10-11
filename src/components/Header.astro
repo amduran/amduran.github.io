@@ -1,38 +1,53 @@
 ---
+import Icon from './Icon.astro';
 import { route } from '../lib/routes';
 import { t } from '../lib/utils';
 
 const { site, ui, lang, routeKey, routeId, alternateHref } = Astro.props;
 const nav = [
-  { key: 'home', className: 'index', label: 'home' },
-  { key: 'publications', className: 'ppublications', label: 'publications' },
-  { key: 'teaching', className: 'pteaching', label: 'teaching' },
-  { key: 'projects', className: 'pprojects', label: 'projects' },
-  { key: 'background', className: 'pinformation', label: 'background' },
-  { key: 'outreach', className: 'ppress', label: 'outreach' },
-  { key: 'contact', className: 'pcontact', label: 'contact' },
+  { key: 'publications', label: 'publications' },
+  { key: 'teaching', label: 'teaching' },
+  { key: 'projects', label: 'projects' },
+  { key: 'background', label: 'nav_background' },
+  { key: 'outreach', label: 'nav_outreach' },
+  { key: 'contact', label: 'contact' },
 ];
+const activeKey = routeKey === 'publication' || routeKey === 'conference' ? 'publications' : routeKey;
+const esHref = lang === 'es' ? route('es', routeKey, routeId) : alternateHref;
+const enHref = lang === 'en' ? route('en', routeKey, routeId) : alternateHref;
 ---
 <header class="site-header">
-  <div class="container nav-shell nav-shell-top">
-    <a class="brand" href={route(lang, 'home')} aria-label="Go to homepage">
-      <span class="brand-mark">{site.brand}</span>
-      <span class="brand-text"><strong>{site.name}</strong><small>{t(ui, 'site_tagline')}</small></span>
+  <div class="container header-bar">
+    <a class="wordmark" href={route(lang, 'home')} aria-current={routeKey === 'home' ? 'page' : undefined}>
+      <svg class="wordmark-mark" viewBox="0 0 26 18" width="26" height="18" aria-hidden="true" focusable="false">
+        <polyline points="1,13 8,5 14,10 25,2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+        <circle cx="8" cy="5" r="2.4" />
+        <circle cx="14" cy="10" r="2.4" />
+      </svg>
+      <span>{site.name}</span>
     </a>
-    <div class="utility-actions" aria-label="Site preferences">
-      <div class="lang-switch" aria-label={t(ui, 'lang_label')}>
-        <a data-lang-switch class:list={["lang-pill", lang === 'es' && 'is-current']} href={lang === 'es' ? route('es', routeKey, routeId) : alternateHref}>ES</a>
-        <a data-lang-switch class:list={["lang-pill", lang === 'en' && 'is-current']} href={lang === 'en' ? route('en', routeKey, routeId) : alternateHref}>EN</a>
-      </div>
-      <button class="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema"><i class="fas fa-moon"></i></button>
-    </div>
-  </div>
-  <div class="container nav-shell nav-shell-bottom">
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir navegación"><span></span><span></span><span></span></button>
-    <nav class="main-menu" id="main-menu">
-      {nav.map((item) => (
-        <a class:list={[item.className, routeKey === item.key && 'is-active']} href={route(lang, item.key)}>{t(ui, item.label)}</a>
-      ))}
+
+    <nav class="site-nav" id="site-nav" aria-label={t(ui, 'main_navigation')}>
+      <ul>
+        {nav.map((item) => (
+          <li><a href={route(lang, item.key)} aria-current={activeKey === item.key ? 'page' : undefined}>{t(ui, item.label)}</a></li>
+        ))}
+      </ul>
     </nav>
+
+    <div class="header-tools">
+      <div class="lang-switch" role="group" aria-label={t(ui, 'lang_label')}>
+        <a href={esHref} hreflang="es" lang="es" aria-current={lang === 'es' ? 'true' : undefined} data-lang-switch>ES</a>
+        <a href={enHref} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined} data-lang-switch>EN</a>
+      </div>
+      <button class="icon-button theme-toggle" type="button" aria-label={t(ui, 'theme_toggle')} title={t(ui, 'theme_toggle')}>
+        <Icon name="moon" class="when-light" />
+        <Icon name="sun" class="when-dark" />
+      </button>
+      <button class="icon-button menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label={t(ui, 'mobile_nav')}>
+        <Icon name="menu" class="when-closed" size={20} />
+        <Icon name="close" class="when-open" size={20} />
+      </button>
+    </div>
   </div>
 </header>

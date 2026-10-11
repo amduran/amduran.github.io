@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { getUi, collectionData } from '../lib/content';
+import { t, fmt, periodLabel, yearOf } from '../lib/utils';
+
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const byStartDesc = (a, b) => Number(yearOf(b.date_ini || b.date)) - Number(yearOf(a.date_ini || a.date)) || Number(b.idx) - Number(a.idx);
+const grants = (await collectionData('grants')).sort(byStartDesc);
+const awards = (await collectionData('awards')).sort(byStartDesc);
+const extra = (await collectionData('extra_education')).sort(byStartDesc);
+---
+<BaseLayout lang={lang} routeKey="background" title={t(ui, 'background_page_title')} description={t(ui, 'background_page_desc')}>
+  <PageIntro title={t(ui, 'background_page_title')} description={t(ui, 'background_page_desc')} />
+
+  <section class="container page-section" aria-labelledby="grants-heading">
+    <header class="section-head"><h2 id="grants-heading">{t(ui, 'grants')}</h2></header>
+    <div class="entry-list">
+      {grants.map((row) => (
+        <article class="entry">
+          <p class="entry-date">{periodLabel(row.date_ini, row.date_end, ui)}</p>
+          <div class="entry-body">
+            <h3 class="entry-title">{row.name}</h3>
+            <p class="entry-meta">{row.entity}</p>
+            <p class="entry-meta entry-meta-soft">{[row.school, row.entity_realisation, row.city !== row.entity_realisation ? row.city : '', row.country].filter(Boolean).join(', ')}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container page-section" aria-labelledby="awards-heading">
+    <header class="section-head"><h2 id="awards-heading">{t(ui, 'awards')}</h2></header>
+    <div class="entry-list">
+      {awards.map((row) => (
+        <article class="entry">
+          <p class="entry-date">{yearOf(row.date) || row.date}</p>
+          <div class="entry-body">
+            <h3 class="entry-title">{row.description}</h3>
+            <p class="entry-meta">{row.entity}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container page-section" aria-labelledby="extra-heading">
+    <header class="section-head"><h2 id="extra-heading">{t(ui, 'extra_education')}</h2></header>
+    <div class="entry-list">
+      {extra.map((row) => (
+        <article class="entry">
+          <p class="entry-date">{yearOf(row.date) || row.date}</p>
+          <div class="entry-body">
+            <h3 class="entry-title">{row.title}</h3>
+            <p class="entry-meta">{row.entity}{row.hours && <>, {fmt(t(ui, 'hours_short'), { n: row.hours })}</>}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

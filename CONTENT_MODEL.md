@@ -759,19 +759,21 @@ Comprueba que:
 
 ## 10. Relación entre contenido y páginas
 
-El contenido de `src/content/` se muestra desde páginas de `src/pages/`.
+El contenido de `src/content/` se muestra mediante las vistas de `src/views/`. Las rutas de `src/pages/` (español) y `src/pages/en/` (inglés) solo eligen el idioma y cargan la vista correspondiente, de modo que cada vista se edita una sola vez para ambos idiomas.
 
 Ejemplos:
 
-| Contenido | Página principal | Página de detalle |
+| Contenido | Vista del listado | Vista de detalle |
 |---|---|---|
-| `papers` | `src/pages/publications/index.astro` | `src/pages/publications/[id].astro` |
-| `conferences` | `src/pages/publications/index.astro` | `src/pages/conferences/[id].astro` |
-| `teaching` | `src/pages/teaching/index.astro` | No aplica |
-| `projects` | `src/pages/projects/index.astro` | No aplica |
-| `outreach` | `src/pages/outreach/index.astro` | No aplica |
+| `papers` | `src/views/PublicationsView.astro` | `src/views/PublicationDetailView.astro` |
+| `conferences` | `src/views/PublicationsView.astro` | `src/views/PublicationDetailView.astro` |
+| `teaching`, `directed_projects`, `teaching_innovation_projects` | `src/views/TeachingView.astro` | No aplica |
+| `projects` | `src/views/ProjectsView.astro` | No aplica |
+| `grants`, `awards`, `extra_education` | `src/views/BackgroundView.astro` | No aplica |
+| `outreach` | `src/views/OutreachView.astro` | No aplica |
+| `education`, `experience` | `src/views/HomeView.astro` | No aplica |
 
-Las versiones inglesas están en:
+Las rutas en inglés están en:
 
 ```text
 src/pages/en/

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Icon from '../components/Icon.astro';
+import { getUi, collectionData } from '../lib/content';
+import { t, localize } from '../lib/utils';
+
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const sections = (await collectionData('outreach')).sort((a, b) => Number(a.idx) - Number(b.idx));
+const host = (url) => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch (_) { return ''; } };
+---
+<BaseLayout lang={lang} routeKey="outreach" title={t(ui, 'outreach_page_title')} description={t(ui, 'outreach_page_desc')}>
+  <PageIntro title={t(ui, 'outreach_page_title')} description={t(ui, 'outreach_page_desc')} />
+
+  {sections.map((section, i) => (
+    <section class="container page-section outreach-section" aria-labelledby={`outreach-${i}`}>
+      <header class="section-head"><h2 id={`outreach-${i}`}>{localize(section.label, lang)}</h2></header>
+      <div class="outreach-items">
+        {section.items.map((item) => (
+          <div class="outreach-item">
+            <h3 class="entry-title">{localize(item.title, lang)}</h3>
+            <ul class:list={['link-list', item.links.length > 6 && 'link-list-columns']}>
+              {item.links.map((link) => (
+                <li>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    <span class="link-label">{localize(link.label, lang)}</span>
+                    <span class="link-host">{host(link.url)}<Icon name="external" size={13} /></span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+</BaseLayout>

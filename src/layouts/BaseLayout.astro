@@ -11,39 +11,61 @@ const {
   routeId = undefined,
   title = undefined,
   description = undefined,
+  jsonLd = undefined,
+  noindex = false,
 } = Astro.props;
 
 const site = await getSite();
 const ui = await getUi(lang);
-const pageTitle = title ? `${title} · ${site.name}` : site.name;
-const metaDescription = description || 'Academic profile of Antonio M. Durán-Rosal: publications, teaching, research projects, awards and contact information.';
+const pageTitle = title && title !== site.name ? `${title} · ${site.name}` : `${site.name} · ${t(ui, 'site_tagline')}`;
+const metaDescription = description || t(ui, 'meta_description');
 const pageClass = legacyPageClass(routeKey);
 const alternateLang = lang === 'en' ? 'es' : 'en';
 const alternateHref = route(alternateLang, routeKey, routeId);
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : '';
+const canonical = `${siteUrl}${Astro.url.pathname}`;
+const hrefEs = `${siteUrl}${route('es', routeKey, routeId)}`;
+const hrefEn = `${siteUrl}${route('en', routeKey, routeId)}`;
+const ogImage = `${siteUrl}/${site.portrait}`;
 ---
 <!doctype html>
 <html lang={lang} dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={metaDescription} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-    <link rel="shortcut icon" href="/img/favicon.png" />
-    <script src="https://kit.fontawesome.com/00154b0b1a.js" crossorigin="anonymous"></script>
     <title>{pageTitle}</title>
-    <script is:inline>(function(){try{var savedTheme=localStorage.getItem('site-theme');if(savedTheme==='dark'||savedTheme==='light'){document.documentElement.setAttribute('data-theme',savedTheme);}}catch(e){}})();</script>
+    <meta name="description" content={metaDescription} />
+    {noindex ? <meta name="robots" content="noindex" /> : (
+      <>
+        <link rel="canonical" href={canonical} />
+        <link rel="alternate" hreflang="es" href={hrefEs} />
+        <link rel="alternate" hreflang="en" href={hrefEn} />
+        <link rel="alternate" hreflang="x-default" href={hrefEs} />
+      </>
+    )}
+    <meta property="og:type" content={routeKey === 'publication' || routeKey === 'conference' ? 'article' : 'profile'} />
+    <meta property="og:title" content={title || site.name} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'es_ES'} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#11111f" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="preload" href="/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script is:inline>(function(){try{var s=localStorage.getItem('site-theme');if(s==='dark'||s==='light'){document.documentElement.setAttribute('data-theme',s);}}catch(e){}document.documentElement.classList.add('js');})();</script>
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <slot name="head" />
   </head>
   <body class={pageClass} data-page={routeKey} data-lang={lang}>
     <Header site={site} ui={ui} lang={lang} routeKey={routeKey} routeId={routeId} alternateHref={alternateHref} />
-    <main id="main-content" class="section-space">
+    <main id="main-content">
       <slot />
     </main>
-    <Footer site={site} ui={ui} />
-    <script src="/js/scripts.js" charset="utf-8"></script>
+    <Footer site={site} ui={ui} lang={lang} />
+    <script src="/js/scripts.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { getUi } from '../lib/content';
+import { route } from '../lib/routes';
+import { t, fmt, authorsHtml, authorList, stripHtml, extractQuartile, quartileBadgeClass, parseImpact, resourceLinks, extractDoi } from '../lib/utils';
+
+/** Detail page shared by journal articles (kind="journal") and conference papers (kind="conference"). */
+const { lang, row, kind = 'journal' } = Astro.props;
+const ui = await getUi(lang);
+const isJournal = kind === 'journal';
+const q = isJournal ? extractQuartile(row.impact) : 'none';
+const impact = isJournal ? parseImpact(row.impact) : null;
+const links = resourceLinks(row, ui);
+const pages = String(row.pages || '').replace(/\s*-\s*/g, '–');
+const [firstPage, lastPage] = String(row.pages || '').split(/\s*[-–]\s*/);
+const doi = extractDoi(`${row.url || ''} ${row.citation || ''}`);
+const abstractText = stripHtml(row.abstract || '');
+const description = abstractText ? (abstractText.length > 220 ? `${abstractText.slice(0, 217).trim()}…` : abstractText) : undefined;
+const citation = String(row.citation || '').replace(/\r\n?/g, '\n').trim();
+const venue = isJournal ? row.journal : row.congress;
+---
+<BaseLayout lang={lang} routeKey={isJournal ? 'publication' : 'conference'} routeId={row.idx} title={row.title} description={description}>
+  <Fragment slot="head">
+    <meta name="citation_title" content={row.title} />
+    {authorList(row.authors).map((name) => <meta name="citation_author" content={name} />)}
+    <meta name="citation_publication_date" content={String(row.year)} />
+    {isJournal ? <meta name="citation_journal_title" content={row.journal} /> : <meta name="citation_conference_title" content={row.congress} />}
+    {isJournal && row.volume && <meta name="citation_volume" content={String(row.volume)} />}
+    {firstPage && <meta name="citation_firstpage" content={firstPage} />}
+    {lastPage && <meta name="citation_lastpage" content={lastPage} />}
+    {doi && <meta name="citation_doi" content={doi} />}
+  </Fragment>
+
+  <div class="container detail">
+    <a class="back-link" href={route(lang, 'publications')}><Icon name="back" size={16} />{t(ui, 'back_to_publications')}</a>
+
+    <div class="detail-grid">
+      <article class="detail-main">
+        <p class="pub-kind">
+          <span>{isJournal ? t(ui, 'journal_article') : t(ui, 'conference_paper')}</span>
+          {q !== 'none' && <span class:list={['q-badge', quartileBadgeClass(q)]}>{q}</span>}
+        </p>
+        <h1 class="detail-title">{row.title}</h1>
+        <p class="pub-authors detail-authors" set:html={authorsHtml(row.authors)} />
+        <p class="pub-venue detail-venue">
+          <cite>{venue}</cite>{isJournal && row.volume && <>, {row.volume}</>}{pages && <>, {isJournal ? pages : fmt(t(ui, 'pages_short'), { pages })}</>}, {row.year}
+        </p>
+
+        {row.abstract && (
+          <section class="detail-section" aria-labelledby="abstract-heading">
+            <h2 id="abstract-heading">{t(ui, 'abstract')}</h2>
+            <p class="prose" set:html={String(row.abstract).trim()} />
+          </section>
+        )}
+
+        {citation && (
+          <section class="detail-section" id="citation-block" aria-labelledby="citation-heading">
+            <div class="citation-head">
+              <h2 id="citation-heading">{t(ui, 'citation')} <span class="muted">BibTeX</span></h2>
+              <button type="button" class="text-button copy-button" data-copy-target="bibtex-code" data-copied-label={t(ui, 'copied')}>
+                <Icon name="copy" size={15} /><span>{t(ui, 'copy_bibtex')}</span>
+              </button>
+            </div>
+            <pre class="citation-block" tabindex="0" aria-labelledby="citation-heading"><code id="bibtex-code">{citation}</code></pre>
+          </section>
+        )}
+      </article>
+
+      <aside class="detail-aside">
+        <dl class="meta-list">
+          <div><dt>{isJournal ? t(ui, 'journal') : t(ui, 'conference')}</dt><dd>{venue}</dd></div>
+          {isJournal && row.volume && <div><dt>{t(ui, 'volume')}</dt><dd>{row.volume}</dd></div>}
+          {!isJournal && row.city && <div><dt>{t(ui, 'city')}</dt><dd>{row.city}</dd></div>}
+          {!isJournal && row.date && <div><dt>{t(ui, 'date_label')}</dt><dd>{row.date}</dd></div>}
+          {pages && <div><dt>{t(ui, 'pages')}</dt><dd>{pages}</dd></div>}
+          <div><dt>{t(ui, 'year')}</dt><dd>{row.year}</dd></div>
+          {impact ? (
+            <>
+              <div><dt>{t(ui, 'impact_factor')}</dt><dd>{impact.index} {impact.year}: {impact.value}</dd></div>
+              <div><dt>{t(ui, 'rank')}</dt><dd>{impact.position} ({impact.quartile})</dd></div>
+              <div><dt>{t(ui, 'category')}</dt><dd>{impact.category}</dd></div>
+            </>
+          ) : (
+            isJournal && row.impact && <div><dt>{t(ui, 'impact')}</dt><dd>{row.impact}</dd></div>
+          )}
+        </dl>
+        {links.length > 0 && (
+          <ul class="action-links">
+            {links.map((link) => (
+              <li><a href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}><span>{link.label}</span><Icon name="external" size={14} /></a></li>
+            ))}
+          </ul>
+        )}
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

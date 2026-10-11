@@ -1,32 +1,61 @@
 ---
-import { t } from '../lib/utils';
-const { site, ui } = Astro.props;
+import Icon from './Icon.astro';
+import { route } from '../lib/routes';
+import { publicFileExists } from '../lib/content';
+import { t, iconForClass } from '../lib/utils';
+
+const { site, ui, lang } = Astro.props;
 const year = new Date().getFullYear();
+const hasCv = publicFileExists(site.cv);
+const iconFor = (url: string) => {
+  const match = site.social_links.find((s) => s.url === url);
+  return match ? iconForClass(match.icon) : iconForClass(url);
+};
+const sections = [
+  { key: 'publications', label: 'publications' },
+  { key: 'teaching', label: 'teaching' },
+  { key: 'projects', label: 'projects' },
+  { key: 'background', label: 'nav_background' },
+  { key: 'outreach', label: 'nav_outreach' },
+  { key: 'contact', label: 'contact' },
+];
+const github = site.social_links.find((s) => iconForClass(s.icon) === 'github');
 ---
 <footer class="site-footer">
   <div class="container footer-grid">
-    <div>
-      <p class="footer-title">{site.name}</p>
-      <p class="footer-copy">Profesor e investigador en Métodos Cuantitativos, centrado en aprendizaje automático, minería de series temporales, predicción y segmentación.</p>
+    <div class="footer-about">
+      <p class="footer-name">{site.name}</p>
+      <p>{t(ui, 'footer_bio')}</p>
     </div>
+
+    <nav aria-label={t(ui, 'sections')}>
+      <p class="footer-heading">{t(ui, 'sections')}</p>
+      <ul class="footer-list">
+        {sections.map((item) => <li><a href={route(lang, item.key)}>{t(ui, item.label)}</a></li>)}
+      </ul>
+    </nav>
+
     <div>
-      <p class="footer-title">Enlaces académicos</p>
-      <div class="footer-links">
-        {site.academic_links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>)}
-        <a href={`/${site.cv}`} target="_blank" rel="noopener noreferrer">{t(ui, 'curriculum_vitae')}</a>
-      </div>
+      <p class="footer-heading">{t(ui, 'academic_links')}</p>
+      <ul class="footer-list">
+        {site.academic_links.map((link) => (
+          <li><a href={link.url} target="_blank" rel="noopener noreferrer"><Icon name={iconFor(link.url)} size={15} />{link.label}</a></li>
+        ))}
+        {github && <li><a href={github.url} target="_blank" rel="noopener noreferrer"><Icon name="github" size={15} />GitHub</a></li>}
+        {hasCv && <li><a href={`/${site.cv}`} download><Icon name="download" size={15} />{t(ui, 'curriculum_vitae')}</a></li>}
+      </ul>
     </div>
+
     <div>
-      <p class="footer-title">{t(ui, 'contact')}</p>
-      <div class="contact-list">
-        <p><i class="fas fa-location-dot"></i> {site.address}</p>
-        <p><i class="fas fa-envelope"></i> <a href={`mailto:${site.email}`}>{site.email}</a></p>
-        <p><i class="fas fa-phone"></i> {site.phone}</p>
-      </div>
-      <div class="social-networks" aria-label="Social links">
-        {site.social_links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer"><i class={link.icon}></i></a>)}
-      </div>
+      <p class="footer-heading">{t(ui, 'contact')}</p>
+      <ul class="footer-list footer-contact">
+        <li><Icon name="mail" size={15} /><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><Icon name="pin" size={15} /><span>{site.address}</span></li>
+        <li><Icon name="phone" size={15} /><span>{site.phone}</span></li>
+      </ul>
     </div>
   </div>
-  <div class="footer-bottom">© {site.name} · <span data-bind="footer-year">{year}</span></div>
+  <div class="container footer-bottom">
+    <p>© {year} {site.name}</p>
+  </div>
 </footer>

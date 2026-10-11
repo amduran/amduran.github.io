@@ -1,37 +1,44 @@
 ---
+import Icon from './Icon.astro';
 import { route } from '../lib/routes';
-import { t, authorsHtml, stripHtml, extractQuartile, quartileBadgeClass, resourceLinks } from '../lib/utils';
-const { row, ui, lang } = Astro.props;
+import { t, fmt, authorsHtml, stripHtml, extractQuartile, quartileBadgeClass, parseImpact, resourceLinks } from '../lib/utils';
+
+const { row, ui, lang, compact = false } = Astro.props;
 const isJournal = row.kind === 'journal';
 const q = isJournal ? extractQuartile(row.impact) : 'none';
+const impact = isJournal ? parseImpact(row.impact) : null;
 const details = route(lang, isJournal ? 'publication' : 'conference', row.idx);
-const search = `${row.title || ''} ${stripHtml(row.authors || '')} ${row.venue || ''} ${row.impact || ''} ${row.city || ''}`.toLowerCase();
-const links = isJournal ? resourceLinks(row, ui) : [];
+const search = `${row.title || ''} ${stripHtml(row.authors || '')} ${row.venue || ''} ${row.impact || ''} ${row.city || ''} ${row.year || ''}`.toLowerCase();
+const allLinks = compact ? [] : resourceLinks(row, ui);
+const hasDoi = allLinks.some((link) => link.className === 'is-doi');
+const links = allLinks.filter((link) => !(hasDoi && link.className === 'is-source'));
+const pages = String(row.pages || '').replace(/\s*-\s*/g, '–');
 ---
-<article class="card-surface publication-row filterable-item" data-type={isJournal ? 'journal' : 'conference'} data-year={row.year} data-quartile={q} data-impact-rank={q} data-title={String(row.title || '').toLowerCase()} data-search={search}>
-  <div class="publication-row-main">
-    <div class="publication-kicker-row">
-      <p class="meta-label">{isJournal ? t(ui, 'journal_article') : t(ui, 'conference_paper')} · {row.year}</p>
-      <div class="publication-tags">
-        {isJournal && q !== 'none' ? <span class:list={["quartile-badge", quartileBadgeClass(q)]}>{q}</span> : <span class="quartile-badge is-none">{t(ui, 'without_quartile')}</span>}
-      </div>
-    </div>
-    <h3><a href={details}>{row.title}</a></h3>
-    <p class="publication-authors" set:html={authorsHtml(row.authors)}></p>
-    {isJournal ? (
-      <>
-        <p class="publication-venue">{row.journal} · Vol. {row.volume} · {row.pages}</p>
-        {row.impact && <p class="publication-impact">{row.impact}</p>}
-        <div class="resource-pill-row">
-          {links.map((link) => <a class:list={["resource-pill", link.className]} href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>{link.label}</a>)}
-        </div>
-      </>
-    ) : (
-      <>
-        <p class="publication-venue">{row.congress} · {row.city} · {row.date}</p>
-        <p class="publication-impact">{t(ui, 'pages')}: {row.pages}</p>
-      </>
+<article class="entry pub filterable-item" data-type={isJournal ? 'journal' : 'conference'} data-year={row.year} data-quartile={q} data-impact-rank={q} data-title={String(row.title || '').toLowerCase()} data-search={search}>
+  <p class="entry-date">{row.year}</p>
+  <div class="entry-body">
+    <p class="pub-kind">
+      <span>{isJournal ? t(ui, 'journal_article') : t(ui, 'conference_paper')}</span>
+      {q !== 'none' && <span class:list={['q-badge', quartileBadgeClass(q)]} title={stripHtml(row.impact)}>{q}</span>}
+    </p>
+    <h3 class="pub-title"><a href={details}>{row.title}</a></h3>
+    <p class="pub-authors" set:html={authorsHtml(row.authors)} />
+    <p class="pub-venue">
+      {isJournal ? (
+        <><cite>{row.journal}</cite>{row.volume && <>, {row.volume}</>}{pages && <>, {pages}</>}</>
+      ) : (
+        <><cite>{row.congress}</cite>{row.city && <>, {row.city}</>}{pages && <>, {fmt(t(ui, 'pages_short'), { pages })}</>}</>
+      )}
+    </p>
+    {!compact && impact && (
+      <p class="pub-impact">{impact.index} {impact.year}: {impact.value} ({fmt(t(ui, 'rank_in'), { position: impact.position, category: impact.category })})</p>
+    )}
+    {links.length > 0 && (
+      <ul class="pub-links">
+        {links.map((link) => (
+          <li><a href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>{link.label}<Icon name="external" size={13} /></a></li>
+        ))}
+      </ul>
     )}
   </div>
-  <a class="inline-button" href={details}>{t(ui, 'details')}</a>
 </article>

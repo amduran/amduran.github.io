@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Icon from '../components/Icon.astro';
+import { getSite, getUi } from '../lib/content';
+import { t, iconForClass } from '../lib/utils';
+
+const { lang } = Astro.props;
+const site = await getSite();
+const ui = await getUi(lang);
+const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(t(ui, 'email_subject'))}`;
+const telHref = `tel:${String(site.phone).replace(/\(.*?\)/g, '').replace(/[^\d+]/g, '')}`;
+const github = site.social_links.find((s) => iconForClass(s.icon) === 'github');
+const profiles = [
+  ...site.academic_links.map((link) => ({ label: link.label, url: link.url, icon: iconForClass(`${link.label} ${link.url}`) })),
+  ...(github ? [{ label: 'GitHub', url: github.url, icon: 'github' }] : []),
+];
+---
+<BaseLayout lang={lang} routeKey="contact" title={t(ui, 'contact_page_title')} description={t(ui, 'contact_page_desc')}>
+  <PageIntro title={t(ui, 'contact_page_title')} description={t(ui, 'contact_page_desc')} />
+
+  <section class="container page-section contact-grid">
+    <div class="contact-main">
+      <p class="contact-note">{t(ui, 'contact_note')}</p>
+      <a class="contact-email" href={`mailto:${site.email}`}>{site.email}</a>
+      <p><a class="button button-primary" href={mailHref}><Icon name="mail" size={16} />{t(ui, 'write_email')}</a></p>
+
+      <dl class="meta-list contact-meta">
+        <div><dt>{t(ui, 'address')}</dt><dd>{site.location}<br />{site.address}</dd></div>
+        <div><dt>{t(ui, 'phone')}</dt><dd><a href={telHref}>{site.phone}</a></dd></div>
+      </dl>
+
+      <h2 class="aside-heading">{t(ui, 'academic_links')}</h2>
+      <ul class="profile-links profile-links-stacked">
+        {profiles.map((p) => (
+          <li><a href={p.url} target="_blank" rel="noopener noreferrer"><Icon name={p.icon} size={16} />{p.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <figure class="map-frame">
+      <iframe
+        title={t(ui, 'map_title')}
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-4.8070%2C37.8590%2C-4.7740%2C37.8770&layer=mapnik&marker=37.867727%2C-4.790526"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <figcaption><a href="https://www.openstreetmap.org/?mlat=37.867727&mlon=-4.790526#map=16/37.86773/-4.79053" target="_blank" rel="noopener noreferrer">{t(ui, 'open_map')}<Icon name="external" size={13} /></a></figcaption>
+    </figure>
+  </section>
+</BaseLayout>

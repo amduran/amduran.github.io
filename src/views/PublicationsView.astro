@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import PublicationRow from '../components/PublicationRow.astro';
+import Icon from '../components/Icon.astro';
+import { getUi, researchItems } from '../lib/content';
+import { t, fmt, extractQuartile } from '../lib/utils';
+
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const items = await researchItems();
+const journals = items.filter((x) => x.kind === 'journal').length;
+const conferences = items.length - journals;
+const years = [...new Set(items.map((item) => String(item.year)).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+const qOrder = { Q1D1: 1, Q1: 2, Q2: 3, Q3: 4, Q4: 5 };
+const quartiles = [...new Set(items.filter((x) => x.kind === 'journal').map((x) => extractQuartile(x.impact)).filter((q) => q !== 'none'))].sort((a, b) => (qOrder[a] || 99) - (qOrder[b] || 99));
+---
+<BaseLayout lang={lang} routeKey="publications" title={t(ui, 'publications')} description={t(ui, 'publications_desc')}>
+  <PageIntro title={t(ui, 'publications')} description={t(ui, 'publications_desc')}>
+    <p class="page-meta">{fmt(t(ui, 'publications_summary'), { journals, conferences })}</p>
+  </PageIntro>
+
+  <div class="container">
+    <form class="filter-bar" role="search" id="publication-filters">
+      <label class="field field-search">
+        <span class="field-label">{t(ui, 'search_label')}</span>
+        <span class="input-with-icon">
+          <Icon name="search" size={16} />
+          <input type="search" id="publication-search" name="q" placeholder={t(ui, 'search_publications')} autocomplete="off" />
+        </span>
+      </label>
+      <label class="field">
+        <span class="field-label">{t(ui, 'year')}</span>
+        <select id="publication-year" name="year"><option value="all">{t(ui, 'all_years')}</option>{years.map((year) => <option value={year}>{year}</option>)}</select>
+      </label>
+      <label class="field">
+        <span class="field-label">{t(ui, 'type_label')}</span>
+        <select id="publication-type" name="type"><option value="all">{t(ui, 'all_types')}</option><option value="journal">{t(ui, 'journal_articles')}</option><option value="conference">{t(ui, 'conference_papers')}</option></select>
+      </label>
+      <label class="field">
+        <span class="field-label">{t(ui, 'quartile')}</span>
+        <select id="publication-quartile" name="quartile"><option value="all">{t(ui, 'all_quartiles')}</option>{quartiles.map((q) => <option value={q}>{q}</option>)}<option value="none">{t(ui, 'without_quartile')}</option></select>
+      </label>
+      <label class="field">
+        <span class="field-label">{t(ui, 'sort_by')}</span>
+        <select id="publication-sort" name="sort"><option value="recent">{t(ui, 'sort_recent')}</option><option value="oldest">{t(ui, 'sort_oldest')}</option><option value="impact">{t(ui, 'sort_impact')}</option><option value="title">{t(ui, 'sort_title')}</option></select>
+      </label>
+    </form>
+
+    <div class="result-bar">
+      <p class="result-count" aria-live="polite"><strong id="publication-count">{items.length}</strong> {t(ui, 'results')}</p>
+      <button type="button" class="text-button" id="publication-clear">{t(ui, 'clear_filters')}</button>
+    </div>
+
+    <h2 class="visually-hidden">{t(ui, 'all_publications_title')}</h2>
+    <div class="entry-list" id="publication-listing">
+      {items.map((row) => <PublicationRow row={row} ui={ui} lang={lang} />)}
+    </div>
+    <p id="publication-empty" class="empty-state" hidden>{t(ui, 'no_results')}</p>
+  </div>
+</BaseLayout>

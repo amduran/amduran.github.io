@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import SegmentedSeries from '../components/SegmentedSeries.astro';
+import PublicationRow from '../components/PublicationRow.astro';
+import { getSite, getUi, collectionData, researchItems, publicFileExists } from '../lib/content';
+import { route } from '../lib/routes';
+import { t, fmt, byIdxDesc, periodLabel, isOngoing, iconForClass, profileName } from '../lib/utils';
+
+const { lang } = Astro.props;
+const site = await getSite();
+const ui = await getUi(lang);
+const education = await collectionData('education');
+const experience = await collectionData('experience');
+const teaching = await collectionData('teaching');
+const items = await researchItems();
+const recent = items.filter((row) => row.kind === 'journal').slice(0, 4);
+const current = teaching.filter((row) => Number(row.current) === 1).sort(byIdxDesc);
+const currentYear = current[0]?.academic_year || '';
+const hasCv = publicFileExists(site.cv);
+
+const github = site.social_links.find((s) => iconForClass(s.icon) === 'github');
+const profiles = [
+  ...site.academic_links.map((link) => ({ label: link.label, url: link.url, icon: iconForClass(`${link.label} ${link.url}`) })),
+  ...(github ? [{ label: 'GitHub', url: github.url, icon: 'github' }] : []),
+];
+const researchLines = [1, 2, 3, 4].map((n) => t(ui, `research_line_${n}`));
+
+const currentPosition = experience.find((row) => isOngoing(row.date_end));
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : '';
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  url: `${siteUrl}${route(lang, 'home')}`,
+  image: `${siteUrl}/${site.portrait}`,
+  email: `mailto:${site.email}`,
+  ...(currentPosition ? { jobTitle: currentPosition.title, worksFor: { '@type': 'CollegeOrUniversity', name: currentPosition.entity, url: currentPosition.url_entity || undefined } } : {}),
+  knowsAbout: researchLines,
+  sameAs: profiles.map((p) => p.url),
+};
+---
+<BaseLayout lang={lang} routeKey="home" jsonLd={person}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 class="hero-name">{site.name.split(' ').map((word, i) => <>{i > 0 && ' '}<span>{word}</span></>)}</h1>
+        <p class="hero-lead">{t(ui, 'hero_lead')}</p>
+        <p class="hero-text">{t(ui, 'hero_text')}</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href={route(lang, 'publications')}>{t(ui, 'view_publications')}</a>
+          {hasCv && <a class="button" href={`/${site.cv}`} download><Icon name="download" size={16} />{t(ui, 'download_cv')}</a>}
+          <a class="button" href={route(lang, 'contact')}>{t(ui, 'contact_cta')}</a>
+        </div>
+        <ul class="profile-links" aria-label={t(ui, 'academic_links')}>
+          {profiles.map((p) => (
+            <li><a href={p.url} target="_blank" rel="noopener noreferrer"><Icon name={p.icon} size={16} />{p.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="hero-aside">
+        <img class="portrait" src={`/${site.portrait}`} alt={site.name} width="427" height="570" fetchpriority="high" />
+        <div class="research-lines">
+          <h2 class="aside-heading">{t(ui, 'research_areas')}</h2>
+          <ul>{researchLines.map((line) => <li>{line}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <SegmentedSeries caption={t(ui, 'figure_caption')} />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="recent-heading">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="recent-heading">{t(ui, 'recent_publications')}</h2>
+        <a class="section-link" href={route(lang, 'publications')}>{fmt(t(ui, 'see_all_publications'), { n: items.length })}</a>
+      </header>
+      <div class="entry-list">
+        {recent.map((row) => <PublicationRow row={row} ui={ui} lang={lang} compact />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container split">
+      <div aria-labelledby="teaching-heading">
+        <header class="section-head">
+          <h2 id="teaching-heading">{t(ui, 'current_courses')}</h2>
+          {currentYear && <p class="section-note">{fmt(t(ui, 'this_year'), { year: currentYear })}</p>}
+        </header>
+        <ul class="course-list">
+          {current.map((row) => (
+            <li>
+              <span class="course-subject">{row.subject}</span>
+              <span class="course-meta">{row.degree.trim()}, {fmt(t(ui, 'course_year'), { n: row.course })}</span>
+              <span class="course-hours">{fmt(t(ui, 'hours_short'), { n: row.hours })}</span>
+            </li>
+          ))}
+        </ul>
+        <a class="section-link section-link-below" href={route(lang, 'teaching')}>{t(ui, 'view_full_teaching')}</a>
+      </div>
+
+      <div aria-labelledby="career-heading">
+        <header class="section-head">
+          <h2 id="career-heading">{t(ui, 'trajectory')}</h2>
+        </header>
+        <div class="entry-list entry-list-tight">
+          {experience.map((row) => (
+            <article class="entry">
+              <p class="entry-date">{periodLabel(row.date_ini, row.date_end, ui)}</p>
+              <div class="entry-body">
+                <h3 class="entry-title">{row.title}</h3>
+                <p class="entry-meta">
+                  {row.url_entity ? <a href={row.url_entity} target="_blank" rel="noopener noreferrer">{row.entity}</a> : row.entity}, {row.city}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="education-heading">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="education-heading">{t(ui, 'education')}</h2>
+      </header>
+      <ol class="degree-grid" reversed>
+        {education.map((row) => (
+          <li class="degree">
+            <p class="entry-date">{row.year}</p>
+            <h3 class="entry-title">{row.title}</h3>
+            <p class="entry-meta">{row.grade ? `${row.entity}, ${t(ui, 'grade_label').toLowerCase()} ${row.grade}` : row.entity}</p>
+            {row.project && (
+              <p class="degree-thesis">
+                {row.url_project ? <a href={row.url_project}>{row.project}</a> : row.project}
+              </p>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

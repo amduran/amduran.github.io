@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { getUi, collectionData } from '../lib/content';
+import { t, authorsHtml, periodLabel, formatMoney, yearOf } from '../lib/utils';
+
+const { lang } = Astro.props;
+const ui = await getUi(lang);
+const projects = (await collectionData('projects')).sort((a, b) => Number(yearOf(b.date_ini)) - Number(yearOf(a.date_ini)) || Number(b.idx) - Number(a.idx));
+---
+<BaseLayout lang={lang} routeKey="projects" title={t(ui, 'projects_page_title')} description={t(ui, 'projects_page_desc')}>
+  <PageIntro title={t(ui, 'projects_page_title')} description={t(ui, 'projects_page_desc')} />
+
+  <section class="container page-section" aria-labelledby="projects-heading">
+    <h2 class="visually-hidden" id="projects-heading">{t(ui, 'projects')}</h2>
+    <div class="entry-list">
+      {projects.map((row) => (
+        <article class="entry">
+          <p class="entry-date">{periodLabel(row.date_ini, row.date_end, ui)}</p>
+          <div class="entry-body">
+            <p class="entry-kicker">{row.scope}{row.reference && row.reference !== '-' && <span class="ref">{row.reference}</span>}</p>
+            <h3 class="entry-title">{row.title}</h3>
+            <p class="entry-meta">{row.entity}</p>
+            <dl class="meta-inline">
+              <div><dt>{t(ui, 'principal_investigators')}</dt><dd set:html={authorsHtml(row.ips)} /></div>
+              {formatMoney(row.money, lang) && <div><dt>{t(ui, 'funding')}</dt><dd>{formatMoney(row.money, lang)}</dd></div>}
+              <div><dt>{t(ui, 'role')}</dt><dd>{row.rol}</dd></div>
+              <div><dt>{t(ui, 'status')}</dt><dd>{row.status}</dd></div>
+            </dl>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

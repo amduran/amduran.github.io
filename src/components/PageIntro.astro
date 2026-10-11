@@ -1,8 +1,8 @@
 ---
-const { eyebrow, title, description } = Astro.props;
+const { title, description } = Astro.props;
 ---
-<section class="container page-intro">
-  <p class="eyebrow">{eyebrow}</p>
+<header class="container page-intro">
   <h1 class="page-title">{title}</h1>
-  <p class="page-description">{description}</p>
-</section>
+  {description && <p class="page-lead">{description}</p>}
+  <slot />
+</header>

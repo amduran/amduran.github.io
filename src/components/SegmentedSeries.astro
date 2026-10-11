@@ -1,0 +1,79 @@
+---
+/**
+ * Hero figure: an illustrative time series and its piecewise-linear segmentation.
+ * The series is generated deterministically at build time (seeded noise), so the
+ * picture is identical on every build and needs no client-side JavaScript.
+ */
+const { caption = '', label = '' } = Astro.props;
+
+const W = 1000;
+const H = 220;
+const TOP = 14;
+const BASE = 196;
+const N = 240;
+
+// Knots of the underlying regimes: [sample index, level in 0..1].
+const knots: Array<[number, number]> = [
+  [0, 0.46], [34, 0.63], [61, 0.4], [104, 0.48], [128, 0.15], [171, 0.58], [206, 0.82], [240, 0.64],
+];
+
+function rng(seed: number) {
+  return () => {
+    seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const rand = rng(1919);
+const gauss = () => {
+  const u = Math.max(rand(), 1e-9);
+  const v = rand();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+};
+
+function level(i: number) {
+  for (let k = 0; k < knots.length - 1; k++) {
+    const [x0, y0] = knots[k];
+    const [x1, y1] = knots[k + 1];
+    if (i >= x0 && i <= x1) return y0 + ((y1 - y0) * (i - x0)) / (x1 - x0);
+  }
+  return knots[knots.length - 1][1];
+}
+
+const sx = (i: number) => (i / N) * W;
+const sy = (v: number) => TOP + (1 - v) * (BASE - TOP);
+const f = (n: number) => n.toFixed(1);
+
+let noise = 0;
+const raw: string[] = [];
+for (let i = 0; i <= N; i++) {
+  noise = 0.55 * noise + 0.034 * gauss();
+  const v = level(i) + noise + 0.018 * Math.sin((2 * Math.PI * i) / 11);
+  raw.push(`${i === 0 ? 'M' : 'L'}${f(sx(i))} ${f(sy(v))}`);
+}
+const rawPath = raw.join('');
+const fitPath = knots.map(([i, v], k) => `${k === 0 ? 'M' : 'L'}${f(sx(i))} ${f(sy(v))}`).join('');
+
+const segments = knots.slice(0, -1).map(([i], k) => ({ x: sx(i), w: sx(knots[k + 1][0]) - sx(i), shaded: k % 2 === 1 }));
+const breaks = knots.slice(1, -1).map(([i, v]) => ({ x: sx(i), y: sy(v) }));
+const ticks = Array.from({ length: N / 20 + 1 }, (_, k) => sx(k * 20));
+---
+<figure class="series-figure" data-animate>
+  <div class="series-plot" role="img" aria-label={label || caption}>
+    <svg class="series-grid" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      {segments.filter((s) => s.shaded).map((s) => <rect class="series-band" x={f(s.x)} y="0" width={f(s.w)} height={BASE} />)}
+      {breaks.map((b) => <line class="series-break" x1={f(b.x)} x2={f(b.x)} y1="0" y2={BASE} vector-effect="non-scaling-stroke" />)}
+      <line class="series-axis" x1="0" x2={W} y1={BASE} y2={BASE} vector-effect="non-scaling-stroke" />
+      {ticks.map((x) => <line class="series-axis" x1={f(x)} x2={f(x)} y1={BASE} y2={BASE + 6} vector-effect="non-scaling-stroke" />)}
+    </svg>
+    <svg class="series-lines" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="series-raw" d={rawPath} vector-effect="non-scaling-stroke" />
+      <path class="series-fit" d={fitPath} vector-effect="non-scaling-stroke" />
+    </svg>
+    {breaks.map((b) => (
+      <span class="series-knot" style={`left:${((b.x / W) * 100).toFixed(2)}%;top:${((b.y / H) * 100).toFixed(2)}%;--at:${(b.x / W).toFixed(3)}`}></span>
+    ))}
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
