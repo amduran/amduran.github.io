@@ -1,0 +1,13 @@
+{
+  "idx": 26,
+  "authors": "D. Guijo-Rubio, A.M. Gómez-Orellana, V.M. Vargas-Yun, J. Pérez-Aracil, M. Vega-Bayo, L. Prieto-Godino, <span class=\"bold\">A.M. Durán-Rosal</span>, C. Hervás-Martínez, S. Salcedo-Sanz and P.A. Gutiérrez",
+  "title": "Wind gusts prediction using multivariate time series classification",
+  "journal": "Energy and AI",
+  "volume": "",
+  "year": 2026,
+  "pages": "100924",
+  "impact": "JCR(2025): 9.7 Position: 25/210 (Q1) Category: COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+  "url": "https://doi.org/10.1016/j.egyai.2026.100924",
+  "abstract": "Wind speed intermittency is a key challenge for integrating wind energy into the energy mix. Accurate wind power forecasting in wind farms is crucial for mitigating this issue. A major source of uncertainty in nowcasting and short-term wind power prediction arises from wind gusts. At very short timescales (seconds), gusts impact turbine stability and loads, while at longer scales (hours), they significantly affect wind speed and power prediction accuracy. This paper proposes Multivariate Time Series Classification (MTSC) approaches specifically designed to capture temporal dependencies in wind speed time series, which are crucial for identifying and predicting wind gusts. We introduce a novel definition of short-term wind gusts affecting power production, based on detecting consecutive hourly increases and decreases (or vice versa) above a given threshold. This setting leads to highly imbalanced datasets, where only a small fraction of samples qualify as wind gusts. To tackle this challenge, we evaluate multiple MTSC models and resampling strategies and demonstrate their effectiveness in improving predictive performance. Our results highlight the potential of these approaches for enhancing short-term wind power forecasting, ultimately contributing to more reliable and efficient wind energy integration.",
+  "citation": "@article{Guijo2026Wind,\n  author = {Guijo-Rubio, David and G{\\'o}mez-Orellana, Antonio Manuel and Vargas-Yun, V{\\'i}ctor Manuel and P{\\'e}rez-Aracil, Jorge and Vega-Bayo, Marta and Prieto-Godino, Luis and Dur{\\'a}n-Rosal, Antonio Manuel and Herv{\\'a}s-Mart{\\'i}nez, C{\\'e}sar and Salcedo-Sanz, Sancho and Guti{\\'e}rrez, Pedro Antonio},\n  title = {Wind gusts prediction using multivariate time series classification},\n  journal = {Energy and AI},\n  pages = {100924},\n  year = {2026},\n  doi = {10.1016/j.egyai.2026.100924}\n}"
+}
