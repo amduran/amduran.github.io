@@ -5,7 +5,7 @@ import SegmentedSeries from '../components/SegmentedSeries.astro';
 import PublicationRow from '../components/PublicationRow.astro';
 import { getSite, getUi, collectionData, researchItems, publicFileExists } from '../lib/content';
 import { route } from '../lib/routes';
-import { t, fmt, byIdxDesc, periodLabel, isOngoing, iconForClass, profileName } from '../lib/utils';
+import { t, fmt, byIdxDesc, periodLabel, isOngoing, iconForClass, profileName, formatNumber } from '../lib/utils';
 
 const { lang } = Astro.props;
 const site = await getSite();
@@ -97,7 +97,7 @@ const person = {
             <li>
               <span class="course-subject">{row.subject}</span>
               <span class="course-meta">{row.degree.trim()}, {fmt(t(ui, 'course_year'), { n: row.course })}</span>
-              <span class="course-hours">{fmt(t(ui, 'hours_short'), { n: row.hours })}</span>
+              <span class="course-hours">{fmt(t(ui, 'hours_short'), { n: formatNumber(row.hours, lang) })}</span>
             </li>
           ))}
         </ul>

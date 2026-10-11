@@ -151,6 +151,13 @@ export function shortAcademicYear(value: string) {
   return match ? `${match[1]}/${match[3]}` : String(value || '');
 }
 
+/** Locale-aware number for hours and similar values: 37.5 → "37,5" in Spanish. */
+export function formatNumber(value: string | number, lang: 'es' | 'en') {
+  const amount = Number(String(value ?? '').replace(',', '.'));
+  if (!Number.isFinite(amount)) return String(value ?? '');
+  return new Intl.NumberFormat(lang === 'es' ? 'es-ES' : 'en-GB', { maximumFractionDigits: 2 }).format(amount);
+}
+
 export function formatMoney(value: string | number, lang: 'es' | 'en') {
   const raw = String(value ?? '').trim();
   if (!raw || raw === '-') return '';

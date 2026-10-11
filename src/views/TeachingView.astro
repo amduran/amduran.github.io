@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageIntro from '../components/PageIntro.astro';
 import { getUi, collectionData } from '../lib/content';
-import { t, fmt, byIdxDesc, authorsHtml, shortAcademicYear, formatMoney, stripHtml } from '../lib/utils';
+import { t, fmt, byIdxDesc, authorsHtml, shortAcademicYear, formatMoney, formatNumber, stripHtml } from '../lib/utils';
 
 const { lang } = Astro.props;
 const ui = await getUi(lang);
@@ -43,7 +43,7 @@ const isSoleSupervisor = (value) => !/\s(y|and)\s|,/.test(stripHtml(value));
               <td>{row.degree.trim()} <span class="muted">({fmt(t(ui, 'course_year'), { n: row.course })})</span></td>
               <td>{row.entity}</td>
               <td>{row.type}</td>
-              <td class="num">{row.hours}</td>
+              <td class="num">{formatNumber(row.hours, lang)}</td>
             </tr>
           ))}
         </tbody>
@@ -65,7 +65,7 @@ const isSoleSupervisor = (value) => !/\s(y|and)\s|,/.test(stripHtml(value));
               <li>
                 <span class="course-subject">{row.subject.trim()}</span>
                 <span class="course-meta">{row.degree.trim()}, {fmt(t(ui, 'course_year'), { n: row.course })}. {row.entity}, {row.type}</span>
-                <span class="course-hours">{fmt(t(ui, 'hours_short'), { n: row.hours })}</span>
+                <span class="course-hours">{fmt(t(ui, 'hours_short'), { n: formatNumber(row.hours, lang) })}</span>
               </li>
             ))}
           </ul>
