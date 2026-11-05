@@ -1,0 +1,13 @@
+{
+  "idx": 19,
+  "authors": "B. Ronquillo, D. Canales, <span class=\"bold\">A.M. Durán-Rosal</span>, D. González and E. Cueto",
+  "title": "Thermodynamics-Informed Graph Neural Networks for Efficient Generalizable Welding Simulation via the GENERIC Formalism",
+  "congress": "10th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS Congress 2026)",
+  "date": "19th-24th July",
+  "year": 2026,
+  "city": "Munich (Germany)",
+  "pages": "",
+  "url": "https://wccm-eccomas2026.org/",
+  "abstract": "",
+  "citation": "@inproceedings{ronquillo2026thermodynamics,\n  title={Thermodynamics-Informed Graph Neural Networks for Efficient Generalizable Welding Simulation via the {GENERIC} Formalism},\n  author={Ronquillo, Bernardo and Canales, Diego and Dur{\\'a}n-Rosal, Antonio Manuel and Gonz{\\'a}lez, David and Cueto, El{\\'i}as},\n  booktitle={10th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS Congress 2026)},\n  address={Munich, Germany},\n  year={2026}\n}"
+}

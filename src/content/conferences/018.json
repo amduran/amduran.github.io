@@ -1,0 +1,13 @@
+{
+  "idx": 18,
+  "authors": "D. Canales, B. Ronquillo, <span class=\"bold\">A.M. Durán-Rosal</span>, D. González and E. Cueto",
+  "title": "Towards Structure-Preserving Deep Learning for Welding: A GENERIC-based Graph Network Approach",
+  "congress": "Congress on Numerical Methods in Engineering (CMN 2026)",
+  "date": "1st-3rd July",
+  "year": 2026,
+  "city": "Gijón (Spain)",
+  "pages": "",
+  "url": "https://cmn2026.semni.org/event/contribution/13009656-f174-11f0-b205-000c29ddfc0c",
+  "abstract": "Simulating industrial welding processes is essential for manufacturing quality, yet classical Finite Element Methods (FEM) are often too computationally expensive for real-time applications like Digital Twins. While Deep Learning offers acceleration, ensuring physical consistency remains a significant challenge. To address this, we present a framework based on MeshGraphNets enhanced by the GENERIC formalism. By imposing a structural bias, this formalism restricts the learning process to identify operators that satisfy the GENERIC bracket structure, guaranteeing thermodynamic consistency—strictly conserving energy and ensuring non-negative entropy. Applied to a nonlinear thermal problem using a Goldak double-ellipsoid heat source, the model achieves inference-speed simulation capabilities. It generalizes effectively to unseen geometries, material parameters, and source trajectories, paving the way for integrating fast, physics-aware surrogates into complex industrial workflows.",
+  "citation": "@inproceedings{canales2026towards,\n  title={Towards Structure-Preserving Deep Learning for Welding: A {GENERIC}-based Graph Network Approach},\n  author={Canales, Diego and Ronquillo, Bernardo and Dur{\\'a}n-Rosal, Antonio Manuel and Gonz{\\'a}lez, David and Cueto, El{\\'i}as},\n  booktitle={Congress on Numerical Methods in Engineering (CMN 2026)},\n  address={Gij{\\'o}n, Spain},\n  year={2026}\n}"
+}
